@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    class IDeduction80EEB
+    interface IDeduction80EEB
     {
         double Deduction80EEBAmount
         {

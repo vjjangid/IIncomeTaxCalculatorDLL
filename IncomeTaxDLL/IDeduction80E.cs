@@ -8,7 +8,7 @@ namespace IncomeTaxDLL
 {
     interface IDeduction80E
     {
-        double IDeduction80UAmount
+        double IDeduction80EAmount
         {
             get;
             set;

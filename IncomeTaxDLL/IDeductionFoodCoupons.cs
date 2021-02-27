@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    class IDeductionFoodCoupons
+    interface IDeductionFoodCoupons
     {
         double FoodCouponsAmount
         {

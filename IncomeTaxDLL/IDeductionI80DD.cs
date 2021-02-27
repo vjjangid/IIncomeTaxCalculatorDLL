@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    interface DeductionI80DD
+    interface IDeductionI80DD
     {
-        double _80DDAmount
+        double Deduction80DDAmount
         {
             get;
             set;

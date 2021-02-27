@@ -45,7 +45,7 @@
     <Compile Include="ExcemtionsAndDeductions.cs" />
     <Compile Include="I80CCD2Deduction.cs" />
     <Compile Include="I80C_Deduction.cs" />
-    <Compile Include="DeductionI80DD.cs" />
+    <Compile Include="IDeductionI80DD.cs" />
     <Compile Include="I80DDB_Deduction.cs" />
     <Compile Include="I80D_Deduction.cs" />
     <Compile Include="IDeduction80CCD.cs" />

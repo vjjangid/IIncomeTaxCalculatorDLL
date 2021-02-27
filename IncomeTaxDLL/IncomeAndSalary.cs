@@ -30,7 +30,6 @@ namespace IncomeTaxDLL
 
         #endregion
 
-
         #region Salary
 
         /// <summary>
