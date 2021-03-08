@@ -31,7 +31,7 @@ namespace IncomeTaxDLL
         private double _Deduction80EEBAmount;
         private double _IDeduction80G50Amount;
         private double _IDeduction80G100PercentAmount;
-        private int _IDeduction80GGAAmount;
+        private double _IDeduction80GGAAmount;
         private double _IDeduction80GGCAmount;
         private double _DeductionTTA_Amount;
         private double _IDeduction80U_Amount;
@@ -326,7 +326,7 @@ namespace IncomeTaxDLL
         /// <summary>
         /// Deduction under 80 GGA 
         /// </summary>
-        public int IDeduction80GGAAmount 
+        public double IDeduction80GGAAmount 
         {
             get
             {
