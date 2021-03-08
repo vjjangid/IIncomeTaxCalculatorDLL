@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ExcemtionsAndDeductions.cs" />
     <Compile Include="I80CCD2Deduction.cs" />
     <Compile Include="I80C_Deduction.cs" />
