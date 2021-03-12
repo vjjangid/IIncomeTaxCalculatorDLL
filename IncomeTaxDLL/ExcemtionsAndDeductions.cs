@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IncomeTaxDLL
+namespace IncomeTax
 {
     public class ExcemtionsAndDeductions : IDeductionStandard , I80CCD2Deduction , I80C_Deduction , IDeduction80CCD , 
                                             IDeduction80E ,IDeduction80EEA, IDeduction80EEB , IDeduction80G50Percent, 

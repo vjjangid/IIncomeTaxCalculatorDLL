@@ -7,8 +7,8 @@
     <ProjectGuid>{96B672BC-1C84-4D30-BCD9-7B653918DB3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IncomeTaxDLL</RootNamespace>
-    <AssemblyName>IncomeTaxDLL</AssemblyName>
+    <RootNamespace>IncomeTax</RootNamespace>
+    <AssemblyName>IncomeTax</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

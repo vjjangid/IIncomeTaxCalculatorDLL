@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using IncomeTax;
 
 namespace IncomeTaxTest
 {
@@ -9,7 +10,7 @@ namespace IncomeTaxTest
         [TestMethod]
         public void UserNameTestValid()
         {
-
+          
         }
     }
 }

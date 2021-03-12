@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IncomeTaxDLL
+namespace IncomeTax
 {
     /// <summary>
     /// Income and Salary ==> Takes the revenue you made for gross salary
