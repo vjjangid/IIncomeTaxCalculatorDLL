@@ -6,31 +6,30 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    interface I_IncomeSalary
+    interface IIncomeCapitalGains
     {
-        double BasicDAAmount
+        double ShortTermCGNormalRates
         {
             get;
             set;
         }
 
-        double HRA_Amount
+        double ShortTermCG15
         {
             get;
             set;
         }
 
-        double BonusCommissionAmount
+        double LongTermCG10
         {
             get;
             set;
         }
 
-        double OtherAllowancesAmount
+        double LongTermCG20
         {
             get;
             set;
         }
-
     }
 }

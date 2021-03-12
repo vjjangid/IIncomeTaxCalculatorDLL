@@ -6,27 +6,15 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    interface I_IncomeCapitalGains
+    interface IDeductionIncomeBusinessProfession
     {
-        double ShortTermCGNormalRates
+        double BusinessAmount
         {
             get;
             set;
         }
 
-        double ShortTermCG15
-        {
-            get;
-            set;
-        }
-
-        double LongTermCG10
-        {
-            get;
-            set;
-        }
-
-        double LongTermCG20
+        double ProfessionAmount
         {
             get;
             set;

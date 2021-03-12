@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    interface I_DeductionIncomeBusinessProfession
+    interface IIncomeOtherSources
     {
-        double BusinessAmount
+
+        double InterestSavingsBankAccounts
         {
             get;
             set;
         }
 
-        double ProfessionAmount
+        double InterestFixedDeposits
+        {
+            get;
+            set;
+        }
+
+        double OtherSources
         {
             get;
             set;

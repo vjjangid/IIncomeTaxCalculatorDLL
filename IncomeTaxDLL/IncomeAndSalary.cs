@@ -9,7 +9,7 @@ namespace IncomeTaxDLL
     /// <summary>
     /// Income and Salary ==> Takes the revenue you made for gross salary
     /// </summary>
-    public class IncomeAndSalary : I_IncomeSalary, I_DeductionIncomeBusinessProfession, I_IncomeCapitalGains, I_IncomeOtherSources 
+    public class IncomeAndSalary : IIncomeSalary, IDeductionIncomeBusinessProfession, IIncomeCapitalGains, IIncomeOtherSources 
     {
 
         #region Properties

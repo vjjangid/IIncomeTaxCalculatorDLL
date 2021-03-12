@@ -6,25 +6,31 @@ using System.Threading.Tasks;
 
 namespace IncomeTaxDLL
 {
-    interface I_IncomeOtherSources
+    interface IIncomeSalary
     {
-
-        double InterestSavingsBankAccounts
+        double BasicDAAmount
         {
             get;
             set;
         }
 
-        double InterestFixedDeposits
+        double HRA_Amount
         {
             get;
             set;
         }
 
-        double OtherSources
+        double BonusCommissionAmount
         {
             get;
             set;
         }
+
+        double OtherAllowancesAmount
+        {
+            get;
+            set;
+        }
+
     }
 }

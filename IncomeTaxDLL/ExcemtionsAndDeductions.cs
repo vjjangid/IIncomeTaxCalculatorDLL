@@ -10,7 +10,7 @@ namespace IncomeTaxDLL
                                             IDeduction80E ,IDeduction80EEA, IDeduction80EEB , IDeduction80G50Percent, 
                                             IDeduction80G100Percent, IDeduction80GGA, IDeduction80GGC , IDeduction80TTA,
                                             IDeduction80U, IDeductionFoodCoupons, IDeductionOthers, IDeductionSection24B,
-                                            IDeductionTTB, I_DeductionIncomeBusinessProfession, IDeductionI80DD
+                                            IDeductionTTB, IDeductionIncomeBusinessProfession, IDeductionI80DD
     {
 
         #region Properties
