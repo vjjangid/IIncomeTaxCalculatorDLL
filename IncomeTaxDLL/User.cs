@@ -12,27 +12,36 @@ namespace IncomeTax
     /// </summary>
     public class User
     {
-        private string _userName;
+        private string _fullUserName;
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
         
         /// <summary>
         /// Username
         /// </summary>
-        public string UserName
+        public string FullUserName
         {
             get
             {
-                return _userName;
-            }
-            set
-            {
-                _userName = value;
+                if (string.IsNullOrWhiteSpace(FirstName) && !string.IsNullOrWhiteSpace(LastName))
+                    _fullUserName = LastName;
+                else if (!string.IsNullOrWhiteSpace(FirstName) && string.IsNullOrWhiteSpace(LastName))
+                    _fullUserName = FirstName;
+                else if (string.IsNullOrWhiteSpace(FirstName) && string.IsNullOrWhiteSpace(LastName))
+                    _fullUserName = "";
+                else
+                    _fullUserName = FirstName + " " + LastName;
+                
+                return _fullUserName;
             }
         }
 
         /// <summary>
         /// Date of birth of User
         /// </summary>
-        public DateTime? DOB { get; set; }
+        public DateTime DOB { get; set; }
 
         /// <summary>
         /// Whether user salaried or not
@@ -44,10 +53,24 @@ namespace IncomeTax
         /// </summary>
         public bool ResidesInMetro { get; set; }
 
-        public AgeCatogry.UserAgeCatogry AgeClass
+        public AgeCategory UserAgeClass
         {
-            get;
-            set;
+            get
+            {
+                return UserAgeCategory.FindUserAgeCategory(DOB);
+            }
+        }
+
+        /// <summary>
+        /// To check the validity of inputs
+        /// </summary>
+        /// <returns></returns>
+        public bool Validity()
+        {
+            bool isValid = true;
+            if (string.IsNullOrWhiteSpace(_fullUserName))
+                isValid = false;
+            return isValid;
         }
     }
 }

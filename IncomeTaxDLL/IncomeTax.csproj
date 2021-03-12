@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgeCatogry.cs" />
+    <Compile Include="AgeCategory.cs" />
     <Compile Include="ExcemtionsAndDeductions.cs" />
     <Compile Include="I80CCD2Deduction.cs" />
     <Compile Include="I80C_Deduction.cs" />
@@ -71,6 +71,7 @@
     <Compile Include="IIncomeSalary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserAgeCategory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
