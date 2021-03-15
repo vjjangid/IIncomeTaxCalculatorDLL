@@ -8,13 +8,13 @@ namespace IncomeTax
 {
     interface IDeductionIncomeBusinessProfession
     {
-        double BusinessAmount
+        int BusinessAmount
         {
             get;
             set;
         }
 
-        double ProfessionAmount
+        int ProfessionAmount
         {
             get;
             set;

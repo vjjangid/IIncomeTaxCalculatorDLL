@@ -8,7 +8,7 @@ namespace IncomeTax
 {
     interface IProfessionalTax
     {
-        double IProfessionalTaxAmount
+        int IProfessionalTaxAmount
         {
             get;
             set;

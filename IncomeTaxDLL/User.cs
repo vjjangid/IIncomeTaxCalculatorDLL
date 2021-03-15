@@ -53,10 +53,14 @@ namespace IncomeTax
         /// </summary>
         public bool ResidesInMetro { get; set; }
 
+        /// <summary>
+        /// User age class whether the user senor, general, supersenior
+        /// </summary>
         public AgeCategory UserAgeClass
         {
             get
             {
+                ///return an enum defining whether the user is senior, general, supersenior
                 return UserAgeCategory.FindUserAgeCategory(DOB);
             }
         }

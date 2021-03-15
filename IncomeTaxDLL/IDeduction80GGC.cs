@@ -8,7 +8,7 @@ namespace IncomeTax
 {
     interface IDeduction80GGC
     {
-        double IDeduction80GGCAmount
+        int IDeduction80GGCAmount
         {
             get;
             set;

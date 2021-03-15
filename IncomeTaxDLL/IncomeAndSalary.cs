@@ -14,19 +14,19 @@ namespace IncomeTax
 
         #region Properties
 
-        private double _BasicDAAmount;
-        private double _HRA_Amount;
-        private double _BonusCommissionAmount;
-        private double _OtherAllowancesAmount;
-        private double _BusinessAmount;
-        private double _ProfessionAmount;
-        private double _ShortTermCGNormalRatesAmount;
-        private double _ShortTermCG15Amount;
-        private double _LongTermCG10;
-        private double _LongTermCG20;
-        private double _InterestSavingsBankAccounts;
-        private double _InterestFixedDeposits;
-        private double _OtherSources;
+        private int _BasicDAAmount;
+        private int _HRA_Amount;
+        private int _BonusCommissionAmount;
+        private int _OtherAllowancesAmount;
+        private int _BusinessAmount;
+        private int _ProfessionAmount;
+        private int _ShortTermCGNormalRatesAmount;
+        private int _ShortTermCG15Amount;
+        private int _LongTermCG10;
+        private int _LongTermCG20;
+        private int _InterestSavingsBankAccounts;
+        private int _InterestFixedDeposits;
+        private int _OtherSources;
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace IncomeTax
         /// <summary>
         /// Income through basic salary and dearness allowance
         /// </summary>
-        public double BasicDAAmount 
+        public int BasicDAAmount 
         {
             get
             {
@@ -43,7 +43,8 @@ namespace IncomeTax
             }
             set
             {
-                _BasicDAAmount = value;
+                _BasicDAAmount = InputValidity.ValidAmounts(value);
+                
             }
         }
 
@@ -51,7 +52,7 @@ namespace IncomeTax
         /// <summary>
         /// Income through House rent allowance 
         /// </summary>
-        public double HRA_Amount 
+        public int HRA_Amount 
         {
             get
             {
@@ -59,14 +60,14 @@ namespace IncomeTax
             }
             set
             {
-                _HRA_Amount = value;
+                _HRA_Amount = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Exemptions through bonus and salary
         /// </summary>
-        public double BonusCommissionAmount 
+        public int BonusCommissionAmount 
         {
             get
             {
@@ -74,14 +75,14 @@ namespace IncomeTax
             }
             set
             {
-                _BonusCommissionAmount = value;
+                _BonusCommissionAmount = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Exemptions through other allowances
         /// </summary>
-        public double OtherAllowancesAmount
+        public int OtherAllowancesAmount
         {
             get
             {
@@ -89,7 +90,7 @@ namespace IncomeTax
             }
             set
             {
-                _OtherAllowancesAmount = value;
+                _OtherAllowancesAmount = InputValidity.ValidAmounts(value);
             }
         }
 
@@ -100,7 +101,7 @@ namespace IncomeTax
         /// <summary>
         /// Income through Business and Profession
         /// </summary>
-        public double BusinessAmount 
+        public int BusinessAmount 
         {
             get
             {
@@ -108,14 +109,14 @@ namespace IncomeTax
             }
             set
             {
-                _BusinessAmount = value;
+                _BusinessAmount = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income through Profession
         /// </summary>
-        public double ProfessionAmount
+        public int ProfessionAmount
         {
             get
             {
@@ -123,7 +124,7 @@ namespace IncomeTax
             }
             set
             {
-                _ProfessionAmount = value;
+                _ProfessionAmount = InputValidity.ValidAmounts(value);
             }
         }
 
@@ -134,7 +135,7 @@ namespace IncomeTax
         /// <summary>
         /// Income through Short Term Capital Gains on Normal rates
         /// </summary>
-        public double ShortTermCGNormalRates 
+        public int ShortTermCGNormalRates 
         {
             get
             {
@@ -142,14 +143,14 @@ namespace IncomeTax
             }
             set
             {
-                _ShortTermCGNormalRatesAmount = value;
+                _ShortTermCGNormalRatesAmount = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income through Short Term Capital Gains at 15 percent rate
         /// </summary>
-        public double ShortTermCG15 
+        public int ShortTermCG15 
         {
             get
             {
@@ -157,14 +158,14 @@ namespace IncomeTax
             }
             set
             {
-                _ShortTermCG15Amount = value;
+                _ShortTermCG15Amount = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income through Long Term capital gains at 10 % rate
         /// </summary>
-        public double LongTermCG10 
+        public int LongTermCG10 
         {
             get
             {
@@ -172,14 +173,14 @@ namespace IncomeTax
             }
             set
             {
-                _LongTermCG10 = value;
+                _LongTermCG10 = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income through Long Term Capital Gain at 20% rate
         /// </summary>
-        public double LongTermCG20 
+        public int LongTermCG20 
         {
             get
             {
@@ -187,7 +188,7 @@ namespace IncomeTax
             }
             set
             {
-                _LongTermCG20 = value;
+                _LongTermCG20 = InputValidity.ValidAmounts(value);
             }
         }
 
@@ -199,7 +200,7 @@ namespace IncomeTax
         /// <summary>
         /// Income through Savings in Bank Accounts
         /// </summary>
-        public double InterestSavingsBankAccounts 
+        public int InterestSavingsBankAccounts 
         {
             get
             {
@@ -207,14 +208,14 @@ namespace IncomeTax
             }
             set
             {
-                _InterestSavingsBankAccounts = value;
+                _InterestSavingsBankAccounts = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income through Interest on Fixed Deposits
         /// </summary>
-        public double InterestFixedDeposits 
+        public int InterestFixedDeposits 
         {
             get
             {
@@ -222,14 +223,14 @@ namespace IncomeTax
             }
             set
             {
-                _InterestFixedDeposits = value;
+                _InterestFixedDeposits = InputValidity.ValidAmounts(value);
             }
         }
 
         /// <summary>
         /// Income throught other sources
         /// </summary>
-        public double OtherSources 
+        public int OtherSources 
         {
             get
             {
@@ -237,7 +238,7 @@ namespace IncomeTax
             }
             set
             {
-                _OtherSources = value;
+                _OtherSources = InputValidity.ValidAmounts(value);
             }
         }
 

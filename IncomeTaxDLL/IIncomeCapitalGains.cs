@@ -8,25 +8,25 @@ namespace IncomeTax
 {
     interface IIncomeCapitalGains
     {
-        double ShortTermCGNormalRates
+        int ShortTermCGNormalRates
         {
             get;
             set;
         }
 
-        double ShortTermCG15
+        int ShortTermCG15
         {
             get;
             set;
         }
 
-        double LongTermCG10
+        int LongTermCG10
         {
             get;
             set;
         }
 
-        double LongTermCG20
+        int LongTermCG20
         {
             get;
             set;

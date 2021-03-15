@@ -8,25 +8,25 @@ namespace IncomeTax
 {
     interface IIncomeSalary
     {
-        double BasicDAAmount
+        int BasicDAAmount
         {
             get;
             set;
         }
 
-        double HRA_Amount
+        int HRA_Amount
         {
             get;
             set;
         }
 
-        double BonusCommissionAmount
+        int BonusCommissionAmount
         {
             get;
             set;
         }
 
-        double OtherAllowancesAmount
+        int OtherAllowancesAmount
         {
             get;
             set;

@@ -8,7 +8,7 @@ namespace IncomeTax
 {
     interface IDeductionFoodCoupons
     {
-        double FoodCouponsAmount
+        int FoodCouponsAmount
         {
             get;
             set;

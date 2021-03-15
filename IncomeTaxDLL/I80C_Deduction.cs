@@ -12,7 +12,7 @@ namespace IncomeTax
         /// <summary>
         /// Equity Linked Saving Scheme deduction
         /// </summary>
-        double I80C_EquityLinkedAmount
+        int I80C_EquityLinkedAmount
         {
             get;
             set;
@@ -21,7 +21,7 @@ namespace IncomeTax
         /// <summary>
         /// Employee provident fund deduction
         /// </summary>
-        double I80C_EPFAmount
+        int I80C_EPFAmount
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IncomeTax
         /// <summary>
         /// Life Insurance deduction
         /// </summary>
-        double I80C_LifeInsuranceAmount
+        int I80C_LifeInsuranceAmount
         {
             get;
             set;
@@ -41,7 +41,7 @@ namespace IncomeTax
         /// <summary>
         /// Provident Fund Deduction Amount
         /// </summary>
-        double I80C_ProvidentFundAmount
+        int I80C_ProvidentFundAmount
         {
             get;
             set;
@@ -50,7 +50,7 @@ namespace IncomeTax
         /// <summary>
         /// Housing Loan Principal Deduction Amount
         /// </summary>
-        double I80C_HousingLoanPrincipalAmount
+        int I80C_HousingLoanPrincipalAmount
         {
             get;
             set;
@@ -60,7 +60,7 @@ namespace IncomeTax
         /// <summary>
         /// National Pension Scheme Deduction Amount
         /// </summary>
-        double I80C_NationalPensionSchemeAmount
+        int I80C_NationalPensionSchemeAmount
         {
             get;
             set;
@@ -69,7 +69,7 @@ namespace IncomeTax
         /// <summary>
         /// Tuition Fees deduction amount
         /// </summary>
-        double I80C_TuitionFeesAmount
+        int I80C_TuitionFeesAmount
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace IncomeTax
         /// <summary>
         /// Others amount
         /// </summary>
-        double I80C_OthersAmount
+        int I80C_OthersAmount
         {
             get;
             set;

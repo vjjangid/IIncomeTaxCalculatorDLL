@@ -8,7 +8,7 @@ namespace IncomeTax
 {
     class I80D_Deduction
     {
-        double _80D_DeductionAmount
+        int _80D_DeductionAmount
         {
             get;
             set;

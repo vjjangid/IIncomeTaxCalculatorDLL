@@ -9,19 +9,19 @@ namespace IncomeTax
     interface IIncomeOtherSources
     {
 
-        double InterestSavingsBankAccounts
+        int InterestSavingsBankAccounts
         {
             get;
             set;
         }
 
-        double InterestFixedDeposits
+        int InterestFixedDeposits
         {
             get;
             set;
         }
 
-        double OtherSources
+        int OtherSources
         {
             get;
             set;

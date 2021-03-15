@@ -15,33 +15,33 @@ namespace IncomeTax
 
         #region Properties
 
-        private double _standardDeductionAmount;
-        private double _I80CCD2DeductionAmount;
-        private double _I80CEquityLinkedAmount;
-        private double _I80C_EPFAmount;
-        private double _I80C_LiferInsuranceAmount;
-        private double _I80C_ProvidentFundAmount;
-        private double _I80C_HousingLoanPrincipalAmount;
-        private double _I80C_NationalPensionSchemeAmount;
-        private double _I80C_TuitionFeesAmount;
-        private double _I80C_OthersAmount;
-        private double _IDeduction80CCDAmount;
-        private double _IDeduction80EAmount;
-        private double _IDeduction80EE_Amount;
-        private double _Deduction80EEBAmount;
-        private double _IDeduction80G50Amount;
-        private double _IDeduction80G100PercentAmount;
-        private double _IDeduction80GGAAmount;
-        private double _IDeduction80GGCAmount;
-        private double _DeductionTTA_Amount;
-        private double _IDeduction80U_Amount;
-        private double _FoodCouponsAmount;
-        private double _OtherDeductionAmount;
-        private double _IDeductionSection_24BAmount;
-        private double _DeductionTTBAmount;
-        private double _BusinessAmount;
-        private double _ProfessionAmount;
-        private double _Deduction80DDAmount;
+        private int _standardDeductionAmount;
+        private int _I80CCD2DeductionAmount;
+        private int _I80CEquityLinkedAmount;
+        private int _I80C_EPFAmount;
+        private int _I80C_LiferInsuranceAmount;
+        private int _I80C_ProvidentFundAmount;
+        private int _I80C_HousingLoanPrincipalAmount;
+        private int _I80C_NationalPensionSchemeAmount;
+        private int _I80C_TuitionFeesAmount;
+        private int _I80C_OthersAmount;
+        private int _IDeduction80CCDAmount;
+        private int _IDeduction80EAmount;
+        private int _IDeduction80EE_Amount;
+        private int _Deduction80EEBAmount;
+        private int _IDeduction80G50Amount;
+        private int _IDeduction80G100PercentAmount;
+        private int _IDeduction80GGAAmount;
+        private int _IDeduction80GGCAmount;
+        private int _DeductionTTA_Amount;
+        private int _IDeduction80U_Amount;
+        private int _FoodCouponsAmount;
+        private int _OtherDeductionAmount;
+        private int _IDeductionSection_24BAmount;
+        private int _DeductionTTBAmount;
+        private int _BusinessAmount;
+        private int _ProfessionAmount;
+        private int _Deduction80DDAmount;
 
         #endregion
 
@@ -50,7 +50,7 @@ namespace IncomeTax
         /// <summary>
         /// Taking Standard deduction Amount
         /// </summary>
-        public double StandardDeductionAmount 
+        public int StandardDeductionAmount 
         { 
             get
             {
@@ -68,7 +68,7 @@ namespace IncomeTax
         /// <summary>
         /// Taking Deduction Amount under 80CCD
         /// </summary>
-        public double I80CCD2DeductionAmount 
+        public int I80CCD2DeductionAmount 
         { 
             get
             {
@@ -87,7 +87,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemptions under 80 C for equity linked funds
         /// </summary>
-        public double I80C_EquityLinkedAmount 
+        public int I80C_EquityLinkedAmount 
         { 
             get
             {
@@ -102,7 +102,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemptions under 80C for Employee Provident Fund amount
         /// </summary>
-        public double I80C_EPFAmount
+        public int I80C_EPFAmount
         {
             get
             {
@@ -117,7 +117,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemptions under 80C for Life Insurance 
         /// </summary>
-        public double I80C_LifeInsuranceAmount 
+        public int I80C_LifeInsuranceAmount 
         {
             get 
             {
@@ -132,7 +132,7 @@ namespace IncomeTax
         /// <summary>
         /// Exemption under 80C for Provident Fund
         /// </summary>
-        public double I80C_ProvidentFundAmount 
+        public int I80C_ProvidentFundAmount 
         {
             get
             {
@@ -147,7 +147,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemption under 80C for Housing Loan Principal Amount
         /// </summary>
-        public double I80C_HousingLoanPrincipalAmount 
+        public int I80C_HousingLoanPrincipalAmount 
         {
             get
             {
@@ -162,7 +162,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemption under 80C for National Pension Scheme Amount
         /// </summary>
-        public double I80C_NationalPensionSchemeAmount 
+        public int I80C_NationalPensionSchemeAmount 
         {
             get
             {
@@ -177,7 +177,7 @@ namespace IncomeTax
         /// <summary>
         /// Excemption under 80C for Tuition Amount
         /// </summary>
-        public double I80C_TuitionFeesAmount 
+        public int I80C_TuitionFeesAmount 
         {
             get
             {
@@ -192,7 +192,7 @@ namespace IncomeTax
         /// <summary>
         /// Excmeption under 80C for Others Expenses
         /// </summary>
-        public double I80C_OthersAmount 
+        public int I80C_OthersAmount 
         { 
             get
             {
@@ -211,7 +211,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80CCD
         /// </summary>
-        public double IDeduction80CCDAmount 
+        public int IDeduction80CCDAmount 
         {
             get
             {
@@ -231,7 +231,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80E
         /// </summary>
-        public double IDeduction80EAmount 
+        public int IDeduction80EAmount 
         {
             get
             {
@@ -250,7 +250,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80 EEA
         /// </summary>
-        public double IDeduction80EEA_Amount 
+        public int IDeduction80EEA_Amount 
         {
             get
             {
@@ -267,7 +267,7 @@ namespace IncomeTax
 
         #region 80 EEB
 
-        public double Deduction80EEBAmount 
+        public int Deduction80EEBAmount 
         {
             get
             {
@@ -287,7 +287,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80 G which is 50%
         /// </summary>
-        public double IDeduction80G50Amount 
+        public int IDeduction80G50Amount 
         {
             get
             {
@@ -307,7 +307,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80G 100%
         /// </summary>
-        public double IDeduction80G100PercentAmount 
+        public int IDeduction80G100PercentAmount 
         {
             get
             {
@@ -326,7 +326,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80 GGA 
         /// </summary>
-        public double IDeduction80GGAAmount 
+        public int IDeduction80GGAAmount 
         {
             get
             {
@@ -345,7 +345,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80 GGC
         /// </summary>
-        public double IDeduction80GGCAmount 
+        public int IDeduction80GGCAmount 
         {
             get
             {
@@ -364,7 +364,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under TTA 
         /// </summary>
-        public double DeductionTTA_Amount 
+        public int DeductionTTA_Amount 
         {
             get
             {
@@ -384,7 +384,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under 80 u
         /// </summary>
-        public double IDeduction80U_Amount
+        public int IDeduction80U_Amount
         {
             get
             {
@@ -404,7 +404,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under Food Coupons
         /// </summary>
-        public double FoodCouponsAmount 
+        public int FoodCouponsAmount 
         {
             get
             {
@@ -425,7 +425,7 @@ namespace IncomeTax
         /// <summary>
         /// Other deductions
         /// </summary>
-        public double OtherDeductionAmount 
+        public int OtherDeductionAmount 
         {
             get
             {
@@ -444,7 +444,7 @@ namespace IncomeTax
         /// <summary>
         /// Deductions under Section 24B
         /// </summary>
-        public double IDeductionSection_24BAmount 
+        public int IDeductionSection_24BAmount 
         {
             get
             {
@@ -463,7 +463,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction under TTB
         /// </summary>
-        public double DeductionTTBAmount 
+        public int DeductionTTBAmount 
         {
             get
             {
@@ -483,7 +483,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction for Business amount
         /// </summary>
-        public double BusinessAmount 
+        public int BusinessAmount 
         {
             get
             {
@@ -498,7 +498,7 @@ namespace IncomeTax
         /// <summary>
         /// Deduction For Profession Amount
         /// </summary>
-        public double ProfessionAmount 
+        public int ProfessionAmount 
         {
             get
             {
@@ -518,7 +518,7 @@ namespace IncomeTax
         /// Deduction under 80DD
         /// </summary>
 
-        public double Deduction80DDAmount 
+        public int Deduction80DDAmount 
         {
             get
             {

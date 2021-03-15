@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 namespace IncomeTax
 {
     
+    /// <summary>
+    /// Calculates the category of the class
+    /// </summary>
 
     public static class UserAgeCategory
     {
         /// <summary>
         /// Calculate the user age ==> Need to check the logic
         /// </summary>
-        /// <param name="dob"></param>
+        /// <param name="dob">Date of Birth</param>
         /// <returns></returns>
         private static int CalculateAge(DateTime dob)
         {
