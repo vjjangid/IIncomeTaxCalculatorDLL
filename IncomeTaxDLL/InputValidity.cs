@@ -13,6 +13,17 @@ namespace IncomeTax
     {
         public static int ValidAmounts(int enteredAmount)
         {
+            try
+            {
+                if(!int.TryParse(Convert.ToString(enteredAmount), out int result))
+                {
+                    throw new ArgumentException();
+                }
+            }
+            catch(ArgumentException exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
             return Math.Max(0, enteredAmount);
         }
     }
