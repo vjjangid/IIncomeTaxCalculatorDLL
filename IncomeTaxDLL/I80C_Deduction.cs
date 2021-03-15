@@ -83,5 +83,7 @@ namespace IncomeTax
             get;
             set;
         }
+
+        int GetAmountUnder80C();
     }
 }

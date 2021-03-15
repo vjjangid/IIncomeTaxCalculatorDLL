@@ -13,5 +13,7 @@ namespace IncomeTax
             get;
             set;
         }
+
+        int GetAmountFoodCoupons();
     }
 }

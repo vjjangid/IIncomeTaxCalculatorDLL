@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IncomeTax
 {
-    public class ExcemtionsAndDeductions : IDeductionStandard , I80CCD2Deduction , I80C_Deduction , IDeduction80CCD , 
+    public class ExemptionsAndDeductions : IDeductionStandard , I80CCD2Deduction , I80C_Deduction , IDeduction80CCD , 
                                             IDeduction80E ,IDeduction80EEA, IDeduction80EEB , IDeduction80G50Percent, 
                                             IDeduction80G100Percent, IDeduction80GGA, IDeduction80GGC , IDeduction80TTA,
                                             IDeduction80U, IDeductionFoodCoupons, IDeductionOthers, IDeductionSection24B,
@@ -45,7 +45,7 @@ namespace IncomeTax
 
         #endregion
 
-        #region Standar Deduction
+        #region Standard Deduction
 
         /// <summary>
         /// Taking Standard deduction Amount
@@ -245,7 +245,7 @@ namespace IncomeTax
 
         #endregion
 
-        #region 80E
+        #region 80EEA
 
         /// <summary>
         /// Deduction under 80 EEA
@@ -477,7 +477,6 @@ namespace IncomeTax
 
         #endregion
 
-
         #region Business Profession
         
         /// <summary>
@@ -513,7 +512,7 @@ namespace IncomeTax
 
         #endregion
 
-        #region
+        #region 80DD
         /// <summary>
         /// Deduction under 80DD
         /// </summary>
@@ -531,5 +530,109 @@ namespace IncomeTax
         }
 
         #endregion
+
+
+
+        #region Method Standard Deduction 
+
+        /// <summary>
+        /// standard deduction amount is always there every year for
+        /// which every citizen is eligible. For now it is 50000 Rs
+        /// </summary>
+        /// <returns>Eligible deduction amount</returns>
+        public int GetStandardDeductionAmount()
+        {
+            return 50000;
+        }
+
+        #endregion
+
+        #region Method 80C 
+
+        /// <summary>
+        /// Total exemption for which candidate is eligible is 150000Rs
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnder80C()
+        {
+            int total = I80C_EPFAmount + I80C_EquityLinkedAmount + I80C_HousingLoanPrincipalAmount + I80C_LifeInsuranceAmount
+                        + I80C_NationalPensionSchemeAmount + I80C_OthersAmount + I80C_ProvidentFundAmount + I80C_TuitionFeesAmount;
+
+            return Math.Min(total, 150000);
+        }
+
+
+        #endregion
+
+        #region Method Food Coupons 
+
+        public int GetAmountFoodCoupons()
+        {
+            return Math.Min(26400, _FoodCouponsAmount);
+        }
+
+        #endregion
+
+        #region Method Section 24B
+
+        /// <summary>
+        /// Amount for which the candidate is eligible under section 24B
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnderSection24B()
+        {
+            return Math.Min(200000, _IDeductionSection_24BAmount);
+        }
+
+        #endregion
+
+        #region Method 80U
+
+        /// <summary>
+        /// Deduction that can be taken under 80U which is 125000
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnder80U()
+        {
+            return Math.Min(125000, _IDeduction80U_Amount);
+        }
+
+        #endregion
+
+        #region Method 80EEA
+        
+        /// <summary>
+        /// Maximum deduction that can be claimed under 80EEA which is 1.5 lakh Rs 
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnder80EEA()
+        {
+            return Math.Min(150000, IDeduction80EEA_Amount);
+        }
+        #endregion
+
+        #region Method 80DD
+        /// <summary>
+        /// Maximum amount that can be exempted under 80DD which is 1.25 Lakh Rs
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnder80DD()
+        {
+            return Math.Min(125000, _Deduction80DDAmount);
+        }
+        #endregion
+
+        #region Method 80EEB 
+        /// <summary>
+        /// Maximum amount that can be exempted under 80EEB which is 1.5 Lakh Rs
+        /// </summary>
+        /// <returns></returns>
+        public int GetAmountUnder80EEB()
+        {
+            return Math.Min(150000, _Deduction80EEBAmount);
+        }
+        #endregion
+
+
     }
 }

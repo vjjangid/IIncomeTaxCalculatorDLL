@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgeCategory.cs" />
-    <Compile Include="ExcemtionsAndDeductions.cs" />
+    <Compile Include="ExemptionsAndDeductions.cs" />
     <Compile Include="I80CCD2Deduction.cs" />
     <Compile Include="I80C_Deduction.cs" />
     <Compile Include="IDeductionI80DD.cs" />

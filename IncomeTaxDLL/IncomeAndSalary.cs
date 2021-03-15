@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+                                                 /// <summary>
+                                                 /// Leaving one doubt here what if user
+                                                 /// enters the string amount? Does application
+                                                 /// will crash? Will check it later
+                                                 /// </summary>
 namespace IncomeTax
 {
     /// <summary>

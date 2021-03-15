@@ -13,5 +13,11 @@ namespace IncomeTax
             get;
             set;
         }
+
+        /// <summary>
+        /// Amount that can be exempted under 80EEB
+        /// </summary>
+        /// <returns></returns>
+        int GetAmountUnder80EEB();
     }
 }

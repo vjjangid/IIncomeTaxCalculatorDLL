@@ -13,5 +13,11 @@ namespace IncomeTax
             get;
             set;
         }
+
+        /// <summary>
+        /// Amount for which the candidated us eligible under this section
+        /// </summary>
+        /// <returns></returns>
+        int GetAmountUnderSection24B();
     }
 }

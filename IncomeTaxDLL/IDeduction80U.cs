@@ -13,5 +13,11 @@ namespace IncomeTax
             get;
             set;
         }
+
+        /// <summary>
+        /// Amount that can be deducted under 80U
+        /// </summary>
+        /// <returns></returns>
+        int GetAmountUnder80U();
     }
 }
