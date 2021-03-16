@@ -70,6 +70,7 @@
     <Compile Include="IIncomeCapitalGains.cs" />
     <Compile Include="IIncomeOtherSources.cs" />
     <Compile Include="IIncomeSalary.cs" />
+    <Compile Include="ISurchargeTax.cs" />
     <Compile Include="OldRegimeTaxSlab.cs" />
     <Compile Include="OldTaxRegime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
