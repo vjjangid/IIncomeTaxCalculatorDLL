@@ -47,49 +47,49 @@ namespace IncomeTax
 
             //No tax upto 250000
             taxableAmount -= 250000;
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //Five percent tax for next 250000;
             if (taxableAmount - 250000 <= 0)
             {
-                Console.WriteLine("5 percent if");
+                //Console.WriteLine("5 percent if");
                 totalTax += taxableAmount * (0.05);
                 return totalTax;
             }
             else
             {
-                Console.WriteLine("5 percent else");
+                //Console.WriteLine("5 percent else");
                 totalTax = (250000 * 0.05);
                 taxableAmount = taxableAmount - 250000;
             }
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //20 percent tax for next  5 lakhs
             if (taxableAmount - 500000 <= 0)
             {
-                Console.WriteLine("20 percent if");
+                //Console.WriteLine("20 percent if");
                 totalTax += taxableAmount * (0.2);
-                Console.WriteLine("Total Tax :: " + totalTax);
+                //Console.WriteLine("Total Tax :: " + totalTax);
                 return totalTax;
             }
             else
             {
-                Console.WriteLine("20 percent else");
+                //Console.WriteLine("20 percent else");
                 totalTax += 500000 * (0.2);
                 taxableAmount = taxableAmount - 500000;
             }
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //30 percent tax for remaining amount
             totalTax += taxableAmount * (0.3);
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
             return totalTax;
 
         }
@@ -108,49 +108,49 @@ namespace IncomeTax
 
             //No tax upto 300000
             taxableAmount -= 300000;
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //Five percent tax for next 200000;
             if (taxableAmount - 200000 <= 0)
             {
-                Console.WriteLine("5 percent if");
+                //Console.WriteLine("5 percent if");
                 totalTax += taxableAmount * (0.05);
                 return totalTax;
             }
             else
             {
-                Console.WriteLine("5 percent else");
+                //Console.WriteLine("5 percent else");
                 totalTax = (200000 * 0.05);
                 taxableAmount = taxableAmount - 200000;
             }
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //20 percent tax for next  5 lakhs
             if (taxableAmount - 500000 <= 0)
             {
-                Console.WriteLine("20 percent if");
+                //Console.WriteLine("20 percent if");
                 totalTax += taxableAmount * (0.2);
-                Console.WriteLine("Total Tax :: " + totalTax);
+                //Console.WriteLine("Total Tax :: " + totalTax);
                 return totalTax;
             }
             else
             {
-                Console.WriteLine("20 percent else");
+                //Console.WriteLine("20 percent else");
                 totalTax += 500000 * (0.2);
                 taxableAmount = taxableAmount - 500000;
             }
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //30 percent tax for remaining amount
             totalTax += taxableAmount * (0.3);
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
             return totalTax;
 
         }
@@ -169,33 +169,33 @@ namespace IncomeTax
 
             //No tax upto 500000
             taxableAmount -= 500000;
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
 
             //20 percent tax for next  5 lakhs
             if (taxableAmount - 500000 <= 0)
             {
-                Console.WriteLine("20 percent if");
+                //Console.WriteLine("20 percent if");
                 totalTax += taxableAmount * (0.2);
-                Console.WriteLine("Total Tax :: " + totalTax);
+                //Console.WriteLine("Total Tax :: " + totalTax);
                 return totalTax;
             }
             else
             {
-                Console.WriteLine("20 percent else");
+                //Console.WriteLine("20 percent else");
                 totalTax += 500000 * (0.2);
                 taxableAmount = taxableAmount - 500000;
             }
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
 
             //30 percent tax for remaining amount
             totalTax += taxableAmount * (0.3);
 
-            Console.WriteLine("total Gross Salary is :: " + taxableAmount);
-            Console.WriteLine("Total tax till now is :: " + totalTax);
+            //Console.WriteLine("total Gross Salary is :: " + taxableAmount);
+            //Console.WriteLine("Total tax till now is :: " + totalTax);
             return totalTax;
 
         }
