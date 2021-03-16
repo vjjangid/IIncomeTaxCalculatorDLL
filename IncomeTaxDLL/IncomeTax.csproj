@@ -62,6 +62,7 @@
     <Compile Include="IDeductionOthers.cs" />
     <Compile Include="IDeductionSection24B.cs" />
     <Compile Include="IDeductionTTB.cs" />
+    <Compile Include="IHealthAndEducationSurcharge.cs" />
     <Compile Include="IncomeAndSalary.cs" />
     <Compile Include="InputValidity.cs" />
     <Compile Include="IProfessionalTax.cs" />
