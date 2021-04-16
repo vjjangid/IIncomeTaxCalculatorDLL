@@ -77,6 +77,7 @@ namespace IncomeTax.Data
             catch(ArgumentException exc)
             {
                 Console.WriteLine(exc.Message);
+                throw exc;
             }
               
         }

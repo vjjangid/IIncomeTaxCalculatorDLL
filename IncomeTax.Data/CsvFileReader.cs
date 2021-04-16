@@ -49,6 +49,7 @@ namespace IncomeTax.Data
             catch (FileNotFoundException exc)
             {
                 Console.WriteLine(exc.Message);
+                throw exc;
             }
 
             return userlist;
