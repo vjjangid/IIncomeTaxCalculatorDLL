@@ -636,7 +636,51 @@ namespace IncomeTax
         }
         #endregion
 
+        #region HRA
 
+        /// <summary>
+        /// Calculating House rental allowance deduction
+        /// </summary>
+        /// <param name="HRAAmount">Actual Amount received from the company</param>
+        /// <param name="BasicDA">Actual Basic dearness allowance received</param>
+        /// <param name="rentPaid">Actual Rent Paid</param>
+        /// <param name="metroStatus">metro status of the user</param>
+        /// <returns></returns>
+        public int HraExemptions(int HraAmount, int rentPaid, int BasicDA, bool metroStatus)
+        {
+            //Least of the following conditions amount will be taken into consideration
+            //1. Actual HRA received
+            //2. Actual Rent Paid - 10% of BAsic DA
+            //3. 50 percent of basic for metro user / 4o percent for non metro user
+
+            double secondCond = rentPaid - (BasicDA * 0.1);
+
+            double thirdCond;
+
+            if (metroStatus)
+            {
+                thirdCond = 0.5 * BasicDA;
+            }
+            else
+            {
+                thirdCond = 0.4 * BasicDA;
+            }
+
+            return ((int)Math.Min(HraAmount, Math.Min(secondCond, thirdCond)));
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Total exemption user can get
+        /// </summary>
+        /// <returns></returns>
+        public int TotalExmeption()
+        {
+            return GetStandardDeductionAmount() + GetAmountUnder80C() + GetAmountUnder80DD() +
+                    GetAmountUnder80EEA() + GetAmountUnder80EEB() + GetAmountUnder80U() + GetAmountUnderSection24B() +
+                    GetAmountFoodCoupons();
+        }
 
     }
 }

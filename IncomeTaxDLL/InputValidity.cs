@@ -26,5 +26,7 @@ namespace IncomeTax
             }
             return Math.Max(0, enteredAmount);
         }
+
+        
     }
 }

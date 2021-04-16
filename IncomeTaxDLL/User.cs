@@ -66,6 +66,11 @@ namespace IncomeTax
         }
 
         /// <summary>
+        /// Write 
+        /// </summary>
+        public int MobileNumber { get; set; }
+
+        /// <summary>
         /// To check the validity of inputs
         /// </summary>
         /// <returns></returns>

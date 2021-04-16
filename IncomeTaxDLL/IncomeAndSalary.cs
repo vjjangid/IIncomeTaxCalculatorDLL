@@ -250,5 +250,18 @@ namespace IncomeTax
 
         #endregion
 
+
+        /// <summary>
+        /// Total income by all sources of the user
+        /// </summary>
+        /// <returns></returns>
+        public int TotalSalaryAndIncome()
+        {
+            return ( _BasicDAAmount +  _HRA_Amount + _BonusCommissionAmount + _OtherAllowancesAmount +
+                     _BusinessAmount + _ProfessionAmount + _ShortTermCGNormalRatesAmount +_ShortTermCG15Amount +
+                    _LongTermCG10 + _LongTermCG20 + _InterestSavingsBankAccounts + _InterestFixedDeposits + 
+                    _OtherSources ) ;
+        }
+
     }
 }

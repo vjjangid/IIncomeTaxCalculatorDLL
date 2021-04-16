@@ -11,7 +11,8 @@ namespace IncomeTax
     /// </summary>
     public class OldRegimeTaxSlab
     {
-        
+
+        #region Main Runner Function
         /// <summary>
         /// Only public function to calculate the tax
         /// </summary>
@@ -31,7 +32,9 @@ namespace IncomeTax
 
             return (int)(totalTax);
         }
+        #endregion
 
+        #region Different Tax Slabs
 
         /// <summary>
         /// Caluclating tax for general age category which <=60
@@ -199,5 +202,7 @@ namespace IncomeTax
             return totalTax;
 
         }
+
+        #endregion
     }
 }
