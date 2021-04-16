@@ -63,6 +63,46 @@ namespace IncomeTax.Data
             return userlist;
         }
 
+        public Dictionary<string, List<string>> RetrieveAllData()
+        {
+            Dictionary<string, List<string>> allRecords = new Dictionary<string, List<string>>();
 
+            try
+            {
+                if (File.Exists(_fileName))
+                {
+                    using (StreamReader reader = new StreamReader(File.OpenRead(_fileName)))
+                    {
+                        
+
+                        string line = "";
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            string[] linearray = line.Split(';');
+                            List<string> temp = new List<string>();
+
+                            for (int i = 1; i < linearray.Length; i++)
+                            {
+                                temp.Add(linearray[i]);
+                            }
+
+                            string MobileNumber = linearray[0];
+                            allRecords.Add(MobileNumber, temp);
+                        }
+                    }
+
+                }
+                else
+                {
+                    throw new FileNotFoundException("$File doesn't exist");
+                }
+            }
+            catch (FileNotFoundException exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw exc;
+            }
+            return allRecords;
+        }
     }
 }

@@ -35,5 +35,12 @@ namespace IncomeTax.Data
         /// <returns></returns>
         bool Read(UserDetails user);
 
+        /// <summary>
+        /// Validation of user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        bool ValidateUser(UserDetails user);
+
     }
 }

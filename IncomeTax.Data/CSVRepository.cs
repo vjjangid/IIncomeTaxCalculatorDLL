@@ -68,5 +68,16 @@ namespace IncomeTax.Data
             writer = new CsvFileWriter(_filePath);
             writer.UpdateRecord(user.MobileNumber, user);
         }
+
+        public bool ValidateUser(UserDetails user)
+        {
+            reader = new CsvFileReader(_filePath);
+            Dictionary<string, List<string>> allData = reader.RetrieveAllData();
+
+            string password = allData[user.MobileNumber][1];
+
+            return (allData.ContainsKey(user.MobileNumber) &&
+                user.UserPassword == password );
+        }
     }
 }
