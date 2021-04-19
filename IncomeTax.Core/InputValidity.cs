@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace IncomeTax
+namespace IncomeTax.Core
 {
     /// <summary>
     /// General purpose class to check the validity of the user amounts input
@@ -17,7 +14,7 @@ namespace IncomeTax
             {
                 if(!int.TryParse(Convert.ToString(enteredAmount), out int result))
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Invalid input");
                 }
             }
             catch(ArgumentException exc)
@@ -27,6 +24,15 @@ namespace IncomeTax
             return Math.Max(0, enteredAmount);
         }
 
-        
+        public static bool ValidMobileNumber(string MobileNumber)
+        {
+            if (MobileNumber.Length == 12)
+            {
+                Match match = Regex.Match(MobileNumber, @"\A\G[9][1][1-9]\d{9}");
+                if (match.Success)
+                    return true;
+            }
+            return false;
+        }
     }
 }
