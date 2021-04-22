@@ -10,7 +10,7 @@ using System.Threading.Tasks;
                                                  /// enters the string amount? Does application
                                                  /// will crash? Will check it later
                                                  /// </summary>
-namespace IncomeTax
+namespace IncomeTax.Core
 {
     /// <summary>
     /// Income and Salary ==> Takes the revenue you made for gross salary

@@ -1,6 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using IncomeTax.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using IncomeTax;
+
 namespace IncomeTaxTest
 {
     [TestClass]
@@ -19,6 +20,19 @@ namespace IncomeTaxTest
             //--Assert
             Assert.AreEqual(expected, actual);
 
+        }
+
+        [TestMethod]
+        public void MobileNumberValidityTest()
+        {
+            //Arrange
+            bool expected = true;
+
+            //Act
+            bool original = InputValidity.ValidMobileNumber("918502803874");
+
+            //Assert
+            Assert.AreEqual(expected, original);
         }
     }
 }

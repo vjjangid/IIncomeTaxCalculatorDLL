@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFC52D86-ACE1-421F-8149-0578474C835B}</ProjectGuid>
+    <ProjectGuid>{96B672BC-1C84-4D30-BCD9-7B653918DB3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IncomeTax.Data</RootNamespace>
-    <AssemblyName>IncomeTax.Data</AssemblyName>
+    <RootNamespace>IncomeTax.Core</RootNamespace>
+    <AssemblyName>IncomeTax.Core</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CsvFileReader.cs" />
-    <Compile Include="CsvFileWriter.cs" />
-    <Compile Include="IUserRepository.cs" />
-    <Compile Include="UserDetails.cs" />
-    <Compile Include="CSVRepository.cs" />
+    <Compile Include="AgeCategory.cs" />
+    <Compile Include="NewTaxRegime.cs" />
+    <Compile Include="UserStatus.cs" />
+    <Compile Include="ExemptionsAndDeductions.cs" />
+    <Compile Include="I80CCD2Deduction.cs" />
+    <Compile Include="I80C_Deduction.cs" />
+    <Compile Include="IDeductionI80DD.cs" />
+    <Compile Include="I80DDB_Deduction.cs" />
+    <Compile Include="I80D_Deduction.cs" />
+    <Compile Include="IDeduction80CCD.cs" />
+    <Compile Include="IDeduction80E.cs" />
+    <Compile Include="IDeduction80EEA.cs" />
+    <Compile Include="IDeduction80EEB.cs" />
+    <Compile Include="IDeduction80G100Percent.cs" />
+    <Compile Include="IDeduction80G50Percent.cs" />
+    <Compile Include="IDeduction80GGA.cs" />
+    <Compile Include="IDeduction80GGC.cs" />
+    <Compile Include="IDeduction80TTA.cs" />
+    <Compile Include="IDeduction80U.cs" />
+    <Compile Include="IDeductionFoodCoupons.cs" />
+    <Compile Include="IDeductionOthers.cs" />
+    <Compile Include="IDeductionSection24B.cs" />
+    <Compile Include="IDeductionTTB.cs" />
+    <Compile Include="IHealthAndEducationSurcharge.cs" />
+    <Compile Include="IncomeAndSalary.cs" />
+    <Compile Include="InputValidity.cs" />
+    <Compile Include="IProfessionalTax.cs" />
+    <Compile Include="IDeductionStandard.cs" />
+    <Compile Include="IDeductionIncomeBusinessProfession.cs" />
+    <Compile Include="IIncomeCapitalGains.cs" />
+    <Compile Include="IIncomeOtherSources.cs" />
+    <Compile Include="IIncomeSalary.cs" />
+    <Compile Include="ISurchargeTax.cs" />
+    <Compile Include="OldRegimeTaxSlab.cs" />
+    <Compile Include="OldTaxRegime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IncomeTax.Core\IncomeTax.Core.csproj">
-      <Project>{96b672bc-1c84-4d30-bcd9-7b653918db3a}</Project>
-      <Name>IncomeTax.Core</Name>
-    </ProjectReference>
+    <Compile Include="User.cs" />
+    <Compile Include="UserAgeCategory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IncomeTax
+namespace IncomeTax.Core
 {
     /// <summary>
     /// Enum for the three categories general, senior, super senior

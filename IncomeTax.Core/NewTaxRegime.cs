@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IncomeTax
+namespace IncomeTax.Core
 {
     /// <summary>
     /// New Tax regime of Income Tax
     /// </summary>
-    public class NewTaxRegime : IHealthAndEducationSurcharge, ISurchargeTax
+    public class NewTaxRegime
     {
 
         private double _totalTaxPayableAmount;
 
-        #region Properties
-        public bool Surcharge10Percent { get; set; }
+        //#region Properties
+        //public bool Surcharge10Percent { get; set; }
 
-        public bool Surcharge15Percent { get; set; }
+        //public bool Surcharge15Percent { get; set; }
 
-        public bool Surcharge25Percent { get; set; }
+        //public bool Surcharge25Percent { get; set; }
 
-        public bool Surcharge37Percent { get; set; }
+        //public bool Surcharge37Percent { get; set; }
 
-        #endregion
+        //#endregion
 
         #region Constructor
         public NewTaxRegime(int totalTaxPayableAmount)
@@ -51,23 +51,19 @@ namespace IncomeTax
         {
             if (_totalTaxPayableAmount > 500000000)
             {
-                Surcharge37Percent = true;
-                return (int)(0.37 * _totalTaxPayableAmount);
+                
             }
             if (_totalTaxPayableAmount > 200000000)
             {
-                Surcharge25Percent = true;
-                return (int)(0.25 * _totalTaxPayableAmount);
+                
             }
             if (_totalTaxPayableAmount > 100000000)
             {
-                Surcharge15Percent = true;
-                return (int)(0.15 * _totalTaxPayableAmount);
+                
             }
             if (_totalTaxPayableAmount > 5000000)
             {
-                Surcharge10Percent = true;
-                return (int)(0.10 * _totalTaxPayableAmount);
+              
             }
             return 0;
         }

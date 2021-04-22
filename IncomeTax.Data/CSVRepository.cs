@@ -74,10 +74,23 @@ namespace IncomeTax.Data
             reader = new CsvFileReader(_filePath);
             Dictionary<string, List<string>> allData = reader.RetrieveAllData();
 
-            string password = allData[user.MobileNumber][1];
-
-            return (allData.ContainsKey(user.MobileNumber) &&
-                user.UserPassword == password );
+            try
+            {
+                if (allData.ContainsKey(user.MobileNumber))
+                {
+                    string password = allData[user.MobileNumber][1];
+                    return (allData.ContainsKey(user.MobileNumber) &&
+                            user.UserPassword == password);
+                }
+                else
+                {
+                    throw new ArgumentException("User Doesn't exist");
+                }
+            }
+            catch(ArgumentException exc)
+            {
+                throw exc;
+            }  
         }
     }
 }

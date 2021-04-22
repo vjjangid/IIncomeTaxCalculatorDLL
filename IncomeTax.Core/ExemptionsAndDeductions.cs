@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IncomeTax
+namespace IncomeTax.Core
 {
     /// <summary>
     /// All the exemtions which can be calculated

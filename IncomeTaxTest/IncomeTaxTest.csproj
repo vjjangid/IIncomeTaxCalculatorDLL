@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IncomeTaxDLL\IncomeTax.csproj">
+    <ProjectReference Include="..\IncomeTax.Core\IncomeTax.Core.csproj">
       <Project>{96b672bc-1c84-4d30-bcd9-7b653918db3a}</Project>
-      <Name>IncomeTax</Name>
+      <Name>IncomeTax.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
