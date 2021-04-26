@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IncomeTax.Core.SurchargeTaxStrategy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,23 +16,16 @@ namespace IncomeTax.Core
     /// ==> Calculate the surcharge on total income --> Implements ISurcharge interface
     /// ==> Calculate the health surcharge on total tax --> Implements the Health Surcharge interface
     /// </summary>
-    public class OldTaxRegime : ExemptionsAndDeductions, ISurchargeTax, IHealthAndEducationSurcharge
+    public class OldTaxRegime : ExemptionsAndDeductions, IHealthAndEducationSurcharge
     {
+
         private int _totalIncome;
         private int _hraAmount;
         private int _basicDaAmount;
         private int _rentPaid;
         private bool _metroStatus;
-        private int _totalTaxPayableAmount;
+        private int _totalTaxableAmount;
 
-        #region Properties
-
-        public bool Surcharge10Percent { get; set; }
-        public bool Surcharge15Percent { get; set; }
-        public bool Surcharge25Percent { get; set; }
-        public bool Surcharge37Percent { get; set; }
-
-        #endregion
 
         #region Constructor
 
@@ -54,7 +48,7 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetHelathSurcharge()
         {
-            return (int)(0.04 * _totalTaxPayableAmount);
+            return (int)(0.04 * _totalTaxableAmount);
         }
 
         /// <summary>
@@ -63,27 +57,8 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetSurcharge()
         {
-            if(_totalTaxPayableAmount > 500000000)
-            {
-                Surcharge37Percent = true;
-                return (int)(0.37 * _totalTaxPayableAmount);
-            }
-            if (_totalTaxPayableAmount > 200000000)
-            {
-                Surcharge25Percent = true;
-                return (int)(0.25 * _totalTaxPayableAmount);
-            }
-            if (_totalTaxPayableAmount > 100000000)
-            {
-                Surcharge15Percent = true;
-                return (int)(0.15 * _totalTaxPayableAmount);
-            }
-            if (_totalTaxPayableAmount > 5000000)
-            {
-                Surcharge10Percent = true;
-                return (int)(0.10 * _totalTaxPayableAmount);
-            }
-            return 0;
+            SurchargeTax surchargeTax = new SurchargeTax(_totalTaxableAmount);
+            return surchargeTax.TotalSurchageTax();
         }
 
         /// <summary>
@@ -96,11 +71,11 @@ namespace IncomeTax.Core
             int totalExemption = TotalExmeption();
             totalExemption += HraExemptions(_hraAmount, _basicDaAmount, _rentPaid, _metroStatus);
 
-            _totalTaxPayableAmount = _totalIncome - totalExemption;
+            _totalTaxableAmount = _totalIncome - totalExemption;
 
             OldRegimeTaxSlab oldRegimeTaxSlab = new OldRegimeTaxSlab();
 
-            int totalTax = oldRegimeTaxSlab.calculateTax(ageClass, _totalTaxPayableAmount);
+            int totalTax = oldRegimeTaxSlab.calculateTax(ageClass, _totalTaxableAmount);
             totalTax += GetSurcharge() + GetHelathSurcharge();
 
             return totalTax;

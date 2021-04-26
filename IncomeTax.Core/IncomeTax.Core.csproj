@@ -44,6 +44,7 @@
     <Compile Include="AgeCategory.cs" />
     <Compile Include="NewTaxRegime.cs" />
     <Compile Include="SurchargeTaxStrategy\SurchargeFifteenPercent.cs" />
+    <Compile Include="SurchargeTaxStrategy\SurchargeTax.cs" />
     <Compile Include="SurchargeTaxStrategy\SurchargeTenPercent.cs" />
     <Compile Include="SurchargeTaxStrategy\SurchargeThirtySevenPercent.cs" />
     <Compile Include="SurchargeTaxStrategy\SurchargeTwentyFivePercent.cs" />

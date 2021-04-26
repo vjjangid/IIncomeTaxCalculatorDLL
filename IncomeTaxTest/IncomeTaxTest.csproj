@@ -54,6 +54,8 @@
     <Compile Include="NewRegimeTaxSlab.cs" />
     <Compile Include="OldRegimeTaxSlabTest.cs" />
     <Compile Include="NewRegimeTaxSlabTest.cs" />
+    <Compile Include="OldTaxRegimeTest.cs" />
+    <Compile Include="SurchargeTaxTest.cs" />
     <Compile Include="UserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
