@@ -61,7 +61,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _standardDeductionAmount = InputValidity.ValidAmounts(value);
+                _standardDeductionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -79,7 +79,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80CCD2DeductionAmount = InputValidity.ValidAmounts(value);
+                _I80CCD2DeductionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -98,7 +98,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80CEquityLinkedAmount = InputValidity.ValidAmounts(value);
+                _I80CEquityLinkedAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -113,7 +113,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_EPFAmount = InputValidity.ValidAmounts(value);
+                _I80C_EPFAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -128,7 +128,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_LiferInsuranceAmount = InputValidity.ValidAmounts(value);
+                _I80C_LiferInsuranceAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -143,7 +143,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_ProvidentFundAmount = InputValidity.ValidAmounts(value);
+                _I80C_ProvidentFundAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -158,7 +158,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_HousingLoanPrincipalAmount = InputValidity.ValidAmounts(value);
+                _I80C_HousingLoanPrincipalAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -173,7 +173,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_NationalPensionSchemeAmount = InputValidity.ValidAmounts(value);
+                _I80C_NationalPensionSchemeAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -188,7 +188,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_TuitionFeesAmount = InputValidity.ValidAmounts(value);
+                _I80C_TuitionFeesAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -203,7 +203,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _I80C_OthersAmount = InputValidity.ValidAmounts(value);
+                _I80C_OthersAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -222,7 +222,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80CCDAmount = InputValidity.ValidAmounts(value);
+                _IDeduction80CCDAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -242,7 +242,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80EAmount = InputValidity.ValidAmounts(value);
+                _IDeduction80EAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -262,7 +262,7 @@ namespace IncomeTax.Core
 
             set
             {
-                _IDeduction80EE_Amount = InputValidity.ValidAmounts(value);
+                _IDeduction80EE_Amount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -278,7 +278,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _Deduction80EEBAmount = InputValidity.ValidAmounts(value);
+                _Deduction80EEBAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -298,7 +298,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80G50Amount = InputValidity.ValidAmounts(value);
+                _IDeduction80G50Amount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -318,7 +318,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80G100PercentAmount = InputValidity.ValidAmounts(value);
+                _IDeduction80G100PercentAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -337,7 +337,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80GGAAmount = InputValidity.ValidAmounts(value);
+                _IDeduction80GGAAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -356,7 +356,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80GGCAmount = InputValidity.ValidAmounts(value);
+                _IDeduction80GGCAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -375,7 +375,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _DeductionTTA_Amount = InputValidity.ValidAmounts(value);
+                _DeductionTTA_Amount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -395,7 +395,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeduction80U_Amount = InputValidity.ValidAmounts(value);
+                _IDeduction80U_Amount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -415,7 +415,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _FoodCouponsAmount = InputValidity.ValidAmounts(value);
+                _FoodCouponsAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -436,7 +436,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _OtherDeductionAmount = InputValidity.ValidAmounts(value);
+                _OtherDeductionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -455,7 +455,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _IDeductionSection_24BAmount = InputValidity.ValidAmounts(value);
+                _IDeductionSection_24BAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -474,7 +474,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _DeductionTTBAmount = InputValidity.ValidAmounts(value);
+                _DeductionTTBAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -493,7 +493,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _BusinessAmount = InputValidity.ValidAmounts(value);
+                _BusinessAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -508,7 +508,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _ProfessionAmount = InputValidity.ValidAmounts(value);
+                _ProfessionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -528,7 +528,7 @@ namespace IncomeTax.Core
             }
             set
             {
-                _Deduction80DDAmount = InputValidity.ValidAmounts(value);
+                _Deduction80DDAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
