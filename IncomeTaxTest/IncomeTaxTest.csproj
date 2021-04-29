@@ -49,6 +49,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralTaxSlabTest.cs" />
+    <Compile Include="SeniorTaxSlabTest.cs" />
+    <Compile Include="SuperSeniorTaxSlabTest.cs" />
     <Compile Include="ValidatorTest.cs" />
     <Compile Include="IncomeAndSalaryTest.cs" />
     <Compile Include="NewRegimeTaxSlab.cs" />

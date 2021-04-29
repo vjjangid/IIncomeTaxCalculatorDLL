@@ -1,9 +1,4 @@
 ﻿using IncomeTax.Core.SurchargeTaxStrategy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IncomeTax.Core
 {
@@ -75,7 +70,7 @@ namespace IncomeTax.Core
 
             OldRegimeTaxSlab oldRegimeTaxSlab = new OldRegimeTaxSlab();
 
-            int totalTax = oldRegimeTaxSlab.calculateTax(ageClass, _totalTaxableAmount);
+            int totalTax = oldRegimeTaxSlab.CalculateTax(ageClass, _totalTaxableAmount);
             totalTax += GetSurcharge() + GetHelathSurcharge();
 
             return totalTax;
