@@ -1,31 +1,31 @@
-﻿using IncomeTax.Core.OldTaxRegimeStrategy;
-using System.Collections.Generic;
-
-namespace IncomeTax.Core
+﻿namespace IncomeTax.Core.OldTaxRegimeStrategy
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Tax slabs under old tax regime
     /// </summary>
     public class OldRegimeTaxSlab
     {
-
-        private Dictionary<AgeCategory, ITaxSlabCharges> taxCategories = new Dictionary<AgeCategory, ITaxSlabCharges>();
+        private readonly Dictionary<AgeCategory, ITaxSlabCharges> s_MTaxCategories = new Dictionary<
+                                                                                     AgeCategory,
+                                                                                     ITaxSlabCharges>();
 
         public OldRegimeTaxSlab()
         {
             AddTaxCategories();
         }
 
-        public virtual void AddTaxCategories()
+        public void AddTaxCategories()
         {
-            taxCategories.Add(AgeCategory.General, new GeneralTaxSlab());
-            taxCategories.Add(AgeCategory.Senior, new SeniorTaxSlab());
-            taxCategories.Add(AgeCategory.SuperSenior, new SuperSeniorTaxSlab());
+            s_MTaxCategories.Add(AgeCategory.General, new GeneralTaxSlab());
+            s_MTaxCategories.Add(AgeCategory.Senior, new SeniorTaxSlab());
+            s_MTaxCategories.Add(AgeCategory.SuperSenior, new SuperSeniorTaxSlab());
         }
 
         public virtual void AddTaxCategories(AgeCategory ageCategory, ITaxSlabCharges newTaxSlab)
         {
-            taxCategories.Add(ageCategory, newTaxSlab);
+            s_MTaxCategories.Add(ageCategory, newTaxSlab);
         }
 
         /// <summary>
@@ -36,11 +36,9 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int CalculateTax(AgeCategory ageCategory, double taxableAmount)
         {
-            double totalTax = 0;
-            ITaxSlabCharges taxSlabCharges = taxCategories[ageCategory];
-            totalTax = taxSlabCharges.CalculateTax(taxableAmount);
+            var taxSlabCharges = s_MTaxCategories[ageCategory];
+            var totalTax = taxSlabCharges.CalculateTax(taxableAmount);
             return (int)(totalTax);
-        }
-        
+        }       
     }
 }

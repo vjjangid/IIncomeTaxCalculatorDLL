@@ -1,36 +1,41 @@
-﻿using IncomeTax.Core.SurchargeTaxStrategy;
-
-namespace IncomeTax.Core
+﻿namespace IncomeTax.Core.OldTaxRegimeStrategy
 {
+    using GeneralInterfaces;
+    using SurchargeTaxStrategy;
+
+    /// <inheritdoc  cref="ExemptionsAndDeductions"/>
     /// <summary>
     /// Tax calculation based on old tax regime
     /// What do I need here
-    /// ==> Exemption Deduction are present here --> Inherits Exemption and Deduction class
-    /// ==> After exempting Deductions I get taxable income 
-    /// ==> On this taxable income calculate Tax --> Use OldTaxRegimeSlab class 
-    /// ==> Calculate the surcharge on total income --> Implements ISurcharge interface
-    /// ==> Calculate the health surcharge on total tax --> Implements the Health Surcharge interface
+    /// ==&gt; Exemption Deduction are present here --&gt; Inherits Exemption and Deduction class
+    /// ==&gt; After exempting Deductions I get taxable income 
+    /// ==&gt; On this taxable income calculate Tax --&gt; Use OldTaxRegimeSlab class 
+    /// ==&gt; Calculate the surcharge on total income --&gt; Implements ISurcharge interface
+    /// ==&gt; Calculate the health surcharge on total tax --&gt; Implements the Health Surcharge interface
     /// </summary>
     public class OldTaxRegime : ExemptionsAndDeductions, IHealthAndEducationSurcharge
     {
-
-        private int _totalIncome;
-        private int _hraAmount;
-        private int _basicDaAmount;
-        private int _rentPaid;
-        private bool _metroStatus;
-        private int _totalTaxableAmount;
-
+        private readonly int s_TotalIncome;
+        private readonly int s_HraAmount;
+        private readonly int s_BasicDaAmount;
+        private readonly int s_RentPaid;
+        private readonly bool s_MetroStatus;
+        private int m_TotalTaxableAmount;
 
         #region Constructor
 
-        public OldTaxRegime(int totalIncome, int hraAmount, int basicDaAmount, bool metroStatus )
+
+        public OldTaxRegime(int totalIncome,
+                            int hraAmount,
+                            int basicDaAmount,
+                            bool metroStatus,
+                            int rentPaid)
         {
-            _totalIncome = totalIncome;
-            _hraAmount = hraAmount;
-            _basicDaAmount = basicDaAmount;
-            _rentPaid = IDeduction80GGAAmount;
-            _metroStatus = metroStatus;
+            s_TotalIncome = totalIncome;
+            s_HraAmount = hraAmount;
+            s_BasicDaAmount = basicDaAmount;
+            s_MetroStatus = metroStatus;
+            s_RentPaid = rentPaid;
         }
 
         #endregion
@@ -41,9 +46,9 @@ namespace IncomeTax.Core
         /// Health surcharge is applicable on taxable income
         /// </summary>
         /// <returns></returns>
-        public int GetHelathSurcharge()
+        public int GetHealthSurcharge()
         {
-            return (int)(0.04 * _totalTaxableAmount);
+            return (int)(0.04 * m_TotalTaxableAmount);
         }
 
         /// <summary>
@@ -52,7 +57,7 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetSurcharge()
         {
-            SurchargeTax surchargeTax = new SurchargeTax(_totalTaxableAmount);
+            var surchargeTax = new SurchargeTax(m_TotalTaxableAmount);
             return surchargeTax.TotalSurchageTax();
         }
 
@@ -63,18 +68,13 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetTotalTax(AgeCategory ageClass)
         {
-            int totalExemption = TotalExmeption();
-            totalExemption += HraExemptions(_hraAmount, _basicDaAmount, _rentPaid, _metroStatus);
-
-            _totalTaxableAmount = _totalIncome - totalExemption;
-
-            OldRegimeTaxSlab oldRegimeTaxSlab = new OldRegimeTaxSlab();
-
-            int totalTax = oldRegimeTaxSlab.CalculateTax(ageClass, _totalTaxableAmount);
-            totalTax += GetSurcharge() + GetHelathSurcharge();
-
+            var totalExemption = TotalExemption();
+            totalExemption += HraExemptions(s_HraAmount, s_BasicDaAmount, s_RentPaid, s_MetroStatus);
+            m_TotalTaxableAmount = s_TotalIncome - totalExemption;
+            var oldRegimeTaxSlab = new OldRegimeTaxSlab();
+            var totalTax = oldRegimeTaxSlab.CalculateTax(ageClass, m_TotalTaxableAmount);
+            totalTax += GetSurcharge() + GetHealthSurcharge();
             return totalTax;
-
         }
 
         #endregion

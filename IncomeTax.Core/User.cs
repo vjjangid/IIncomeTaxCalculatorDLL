@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IncomeTax.Core.OldTaxRegimeStrategy;
 
 namespace IncomeTax.Core
 {
@@ -12,6 +13,17 @@ namespace IncomeTax.Core
     /// </summary>
     public class User
     {
+
+        private IncomeAndSalary _incomeAndSalary;
+        private OldTaxRegime _oldTaxRegime;
+        private NewTaxRegime _newTaxRegime = null;
+
+        public User()
+        {
+            _incomeAndSalary = new IncomeAndSalary();
+            ////_oldTaxRegime = new OldTaxRegime();
+
+        }
         private string _fullUserName;
 
         public string FirstName { get; set; }

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IncomeTax.Data
 {
@@ -50,19 +48,19 @@ namespace IncomeTax.Data
         /// <summary>
         /// Deleltes the user details on the basis of mobile number
         /// </summary>
-        /// <param name="MobileNumber"> Mobile number of the user</param>
-        public void DeleteRecord(string MobileNumber)
+        /// <param name="mobileNumber"> Mobile number of the user</param>
+        public void DeleteRecord(string mobileNumber)
         {
             CsvFileReader reader = new CsvFileReader(_filePath);
             HashSet<string> validList = reader.ValidUserHashSet();
 
             try
             {
-                if (validList.Contains(MobileNumber))
+                if (validList.Contains(mobileNumber))
                 {
                     string tempFile = Path.GetTempFileName();
 
-                    var lineToKeep = File.ReadLines(_filePath).Where(line => !line.Contains(MobileNumber));
+                    var lineToKeep = File.ReadLines(_filePath).Where(line => !line.Contains(mobileNumber));
 
                     File.WriteAllLines(tempFile, lineToKeep);
                     File.Delete(_filePath);
@@ -85,17 +83,17 @@ namespace IncomeTax.Data
         /// <summary>
         /// Updates the information of the user in csv file
         /// </summary>
-        /// <param name="MobileNumber">User Mobile number</param>
+        /// <param name="mobileNumber">User Mobile number</param>
         /// <param name="user">User all details</param>
-        public void UpdateRecord(string MobileNumber, UserDetails user)
+        public void UpdateRecord(string mobileNumber, UserDetails user)
         {
             CsvFileReader reader = new CsvFileReader(_filePath);
             HashSet<string> validList = reader.ValidUserHashSet();
 
-            if (validList.Contains(MobileNumber))
+            if (validList.Contains(mobileNumber))
             {
                 CsvFileWriter writer = new CsvFileWriter(_filePath);
-                writer.DeleteRecord(MobileNumber);
+                writer.DeleteRecord(mobileNumber);
                 writer.WriteRecord(user);
             }
 

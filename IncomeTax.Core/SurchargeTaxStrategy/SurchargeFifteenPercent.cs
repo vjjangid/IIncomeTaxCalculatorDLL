@@ -2,11 +2,11 @@
 {
     public class SurchargeFifteenPercent : ISurchargeTax
     {
-        private static double taxRate = 0.15;
+        private const double TaxRate = 0.15;
 
         public int GetSurcharge(int taxableIncome)
         {
-            return (int)(taxRate * taxableIncome);
+            return (int)(TaxRate * taxableIncome);
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using IncomeTax.Core;
-
-namespace IncomeTaxTest
+﻿namespace IncomeTaxTest
 {
+    using IncomeTax.Core;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
     /// Testing the Income and salary class
     /// </summary>
@@ -13,12 +12,9 @@ namespace IncomeTaxTest
         [TestMethod]
         public void IncomeAndSalaryAmountValidityTest()
         {
-
             //--Arrange
-
             IncomeAndSalary incomeAndSalary = new IncomeAndSalary();
             incomeAndSalary.BasicDAAmount = -898;
-
             int expected = 0;
 
             // --Act
@@ -26,7 +22,6 @@ namespace IncomeTaxTest
 
             // --Assert
             Assert.AreEqual(expected, actual);
-
         }
     }
 }

@@ -2,11 +2,11 @@
 {
     public class SurchargeTenPercent : ISurchargeTax
     {
-        private static double taxRate = 0.10;
+        private static double _taxRate = 0.10;
 
         public int GetSurcharge(int taxableIncome)
         {
-            return (int)(taxRate * taxableIncome);
+            return (int)(_taxRate * taxableIncome);
         }
 
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IncomeTax.Data
+﻿namespace IncomeTax.Data
 {
     /// <summary>
     /// Interface for database CRUD operation

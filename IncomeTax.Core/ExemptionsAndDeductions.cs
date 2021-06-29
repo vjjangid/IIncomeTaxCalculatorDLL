@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IncomeTax.Core.GeneralInterfaces;
 
 namespace IncomeTax.Core
 {
     /// <summary>
-    /// All the exemtions which can be calculated
+    /// All the exemptions which can be calculated
     /// </summary>
-    public class ExemptionsAndDeductions : IDeductionStandard , I80CCD2Deduction , I80C_Deduction , IDeduction80CCD , 
+    public class ExemptionsAndDeductions : IDeductionStandard , I80ccd2Deduction , I80cDeduction , IDeduction80CCD , 
                                             IDeduction80E ,IDeduction80EEA, IDeduction80EEB , IDeduction80G50Percent, 
                                             IDeduction80G100Percent, IDeduction80GGA, IDeduction80GGC , IDeduction80TTA,
                                             IDeduction80U, IDeductionFoodCoupons, IDeductionOthers, IDeductionSection24B,
@@ -19,32 +16,32 @@ namespace IncomeTax.Core
         #region Properties
 
         private int _standardDeductionAmount;
-        private int _I80CCD2DeductionAmount;
-        private int _I80CEquityLinkedAmount;
-        private int _I80C_EPFAmount;
-        private int _I80C_LiferInsuranceAmount;
-        private int _I80C_ProvidentFundAmount;
-        private int _I80C_HousingLoanPrincipalAmount;
-        private int _I80C_NationalPensionSchemeAmount;
-        private int _I80C_TuitionFeesAmount;
-        private int _I80C_OthersAmount;
-        private int _IDeduction80CCDAmount;
-        private int _IDeduction80EAmount;
-        private int _IDeduction80EE_Amount;
-        private int _Deduction80EEBAmount;
-        private int _IDeduction80G50Amount;
-        private int _IDeduction80G100PercentAmount;
-        private int _IDeduction80GGAAmount;
-        private int _IDeduction80GGCAmount;
-        private int _DeductionTTA_Amount;
-        private int _IDeduction80U_Amount;
-        private int _FoodCouponsAmount;
-        private int _OtherDeductionAmount;
-        private int _IDeductionSection_24BAmount;
-        private int _DeductionTTBAmount;
-        private int _BusinessAmount;
-        private int _ProfessionAmount;
-        private int _Deduction80DDAmount;
+        private int _i80Ccd2DeductionAmount;
+        private int _i80CEquityLinkedAmount;
+        private int _epfAmount;
+        private int _i80CLiferInsuranceAmount;
+        private int _providentFundAmount;
+        private int _housingLoanPrincipalAmount;
+        private int _nationalPensionSchemeAmount;
+        private int _tuitionFeesAmount;
+        private int _othersAmount;
+        private int _iDeduction80CcdAmount;
+        private int _iDeduction80EAmount;
+        private int _iDeduction80EeAmount;
+        private int _deduction80EebAmount;
+        private int _iDeduction80G50Amount;
+        private int _iDeduction80G100PercentAmount;
+        private int _iDeduction80GgaAmount;
+        private int _iDeduction80GgcAmount;
+        private int _deductionTtaAmount;
+        private int _iDeduction80UAmount;
+        private int _foodCouponsAmount;
+        private int _otherDeductionAmount;
+        private int _iDeductionSection24BAmount;
+        private int _deductionTtbAmount;
+        private int _businessAmount;
+        private int _professionAmount;
+        private int _deduction80DdAmount;
 
         #endregion
 
@@ -55,14 +52,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int StandardDeductionAmount 
         { 
-            get
-            {
-                return _standardDeductionAmount;
-            }
-            set
-            {
-                _standardDeductionAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _standardDeductionAmount;
+            set => _standardDeductionAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -73,14 +64,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int I80CCD2DeductionAmount 
         { 
-            get
-            {
-                return _I80CCD2DeductionAmount;
-            }
-            set
-            {
-                _I80CCD2DeductionAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _i80Ccd2DeductionAmount;
+            set => _i80Ccd2DeductionAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -88,123 +73,75 @@ namespace IncomeTax.Core
         #region 80C
 
         /// <summary>
-        /// Excemptions under 80 C for equity linked funds
+        /// Exemptions under 80 C for equity linked funds
         /// </summary>
-        public int I80C_EquityLinkedAmount 
+        public int EquityLinkedAmount 
         { 
-            get
-            {
-                return _I80CEquityLinkedAmount;
-            }
-            set
-            {
-                _I80CEquityLinkedAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _i80CEquityLinkedAmount;
+            set => _i80CEquityLinkedAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excemptions under 80C for Employee Provident Fund amount
+        /// Exemptions under 80C for Employee Provident Fund amount
         /// </summary>
-        public int I80C_EPFAmount
+        public int EPFAmount
         {
-            get
-            {
-                return _I80C_EPFAmount;
-            }
-            set
-            {
-                _I80C_EPFAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _epfAmount;
+            set => _epfAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excemptions under 80C for Life Insurance 
+        /// Exemptions under 80C for Life Insurance 
         /// </summary>
-        public int I80C_LifeInsuranceAmount 
+        public int LifeInsuranceAmount 
         {
-            get 
-            {
-                return _I80C_LiferInsuranceAmount;
-            }
-            set
-            {
-                _I80C_LiferInsuranceAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _i80CLiferInsuranceAmount;
+            set => _i80CLiferInsuranceAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
         /// Exemption under 80C for Provident Fund
         /// </summary>
-        public int I80C_ProvidentFundAmount 
+        public int ProvidentFundAmount  
         {
-            get
-            {
-                return _I80C_ProvidentFundAmount;
-            }
-            set
-            {
-                _I80C_ProvidentFundAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _providentFundAmount;
+            set => _providentFundAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excemption under 80C for Housing Loan Principal Amount
+        /// Exemption under 80C for Housing Loan Principal Amount
         /// </summary>
-        public int I80C_HousingLoanPrincipalAmount 
+        public int HousingLoanPrincipalAmount 
         {
-            get
-            {
-                return _I80C_HousingLoanPrincipalAmount;
-            }
-            set
-            {
-                _I80C_HousingLoanPrincipalAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _housingLoanPrincipalAmount;
+            set => _housingLoanPrincipalAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excemption under 80C for National Pension Scheme Amount
+        /// Exemption under 80C for National Pension Scheme Amount
         /// </summary>
-        public int I80C_NationalPensionSchemeAmount 
+        public int NationalPensionSchemeAmount 
         {
-            get
-            {
-                return _I80C_NationalPensionSchemeAmount;
-            }
-            set
-            {
-                _I80C_NationalPensionSchemeAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _nationalPensionSchemeAmount;
+            set => _nationalPensionSchemeAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excemption under 80C for Tuition Amount
+        /// Exemption under 80C for Tuition Amount
         /// </summary>
-        public int I80C_TuitionFeesAmount 
+        public int TuitionFeesAmount 
         {
-            get
-            {
-                return _I80C_TuitionFeesAmount;
-            }
-            set
-            {
-                _I80C_TuitionFeesAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _tuitionFeesAmount;
+            set => _tuitionFeesAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
-        /// Excmeption under 80C for Others Expenses
+        /// Exemption under 80C for Others Expenses
         /// </summary>
-        public int I80C_OthersAmount 
+        public int OthersAmount 
         { 
-            get
-            {
-                return _I80C_OthersAmount;
-            }
-            set
-            {
-                _I80C_OthersAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _othersAmount;
+            set => _othersAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -216,14 +153,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80CCDAmount 
         {
-            get
-            {
-                return _IDeduction80CCDAmount;
-            }
-            set
-            {
-                _IDeduction80CCDAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80CcdAmount;
+            set => _iDeduction80CcdAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -236,14 +167,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80EAmount 
         {
-            get
-            {
-                return _IDeduction80EAmount;
-            }
-            set
-            {
-                _IDeduction80EAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80EAmount;
+            set => _iDeduction80EAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -253,17 +178,11 @@ namespace IncomeTax.Core
         /// <summary>
         /// Deduction under 80 EEA
         /// </summary>
-        public int IDeduction80EEA_Amount 
+        public int IDeduction80eeaAmount 
         {
-            get
-            {
-                return _IDeduction80EE_Amount;
-            }
+            get => _iDeduction80EeAmount;
 
-            set
-            {
-                _IDeduction80EE_Amount = Validator.ValidateMoneyAmount(value);
-            }
+            set => _iDeduction80EeAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -272,14 +191,8 @@ namespace IncomeTax.Core
 
         public int Deduction80EEBAmount 
         {
-            get
-            {
-                return _Deduction80EEBAmount;
-            }
-            set
-            {
-                _Deduction80EEBAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _deduction80EebAmount;
+            set => _deduction80EebAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -292,14 +205,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80G50Amount 
         {
-            get
-            {
-                return _IDeduction80G50Amount;
-            }
-            set
-            {
-                _IDeduction80G50Amount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80G50Amount;
+            set => _iDeduction80G50Amount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -312,14 +219,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80G100PercentAmount 
         {
-            get
-            {
-                return _IDeduction80G100PercentAmount;
-            }
-            set
-            {
-                _IDeduction80G100PercentAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80G100PercentAmount;
+            set => _iDeduction80G100PercentAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -331,14 +232,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80GGAAmount 
         {
-            get
-            {
-                return _IDeduction80GGAAmount;
-            }
-            set
-            {
-                _IDeduction80GGAAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80GgaAmount;
+            set => _iDeduction80GgaAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -350,14 +245,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80GGCAmount 
         {
-            get
-            {
-                return _IDeduction80GGCAmount;
-            }
-            set
-            {
-                _IDeduction80GGCAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80GgcAmount;
+            set => _iDeduction80GgcAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -369,14 +258,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int DeductionTTA_Amount 
         {
-            get
-            {
-                return _DeductionTTA_Amount;
-            }
-            set
-            {
-                _DeductionTTA_Amount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _deductionTtaAmount;
+            set => _deductionTtaAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -389,14 +272,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeduction80U_Amount
         {
-            get
-            {
-                return _IDeduction80U_Amount;
-            }
-            set
-            {
-                _IDeduction80U_Amount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeduction80UAmount;
+            set => _iDeduction80UAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -409,14 +286,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int FoodCouponsAmount 
         {
-            get
-            {
-                return _FoodCouponsAmount;
-            }
-            set
-            {
-                _FoodCouponsAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _foodCouponsAmount;
+            set => _foodCouponsAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -430,14 +301,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int OtherDeductionAmount 
         {
-            get
-            {
-                return _OtherDeductionAmount;
-            }
-            set
-            {
-                _OtherDeductionAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _otherDeductionAmount;
+            set => _otherDeductionAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -449,14 +314,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int IDeductionSection_24BAmount 
         {
-            get
-            {
-                return _IDeductionSection_24BAmount;
-            }
-            set
-            {
-                _IDeductionSection_24BAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _iDeductionSection24BAmount;
+            set => _iDeductionSection24BAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -468,14 +327,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int DeductionTTBAmount 
         {
-            get
-            {
-                return _DeductionTTBAmount;
-            }
-            set
-            {
-                _DeductionTTBAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _deductionTtbAmount;
+            set => _deductionTtbAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -487,14 +340,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int BusinessAmount 
         {
-            get
-            {
-                return _BusinessAmount;
-            }
-            set
-            {
-                _BusinessAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _businessAmount;
+            set => _businessAmount = Validator.ValidateMoneyAmount(value);
         }
 
         /// <summary>
@@ -502,14 +349,8 @@ namespace IncomeTax.Core
         /// </summary>
         public int ProfessionAmount 
         {
-            get
-            {
-                return _ProfessionAmount;
-            }
-            set
-            {
-                _ProfessionAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _professionAmount;
+            set => _professionAmount = Validator.ValidateMoneyAmount(value);
         }
 
 
@@ -522,14 +363,8 @@ namespace IncomeTax.Core
 
         public int Deduction80DDAmount 
         {
-            get
-            {
-                return _Deduction80DDAmount;
-            }
-            set
-            {
-                _Deduction80DDAmount = Validator.ValidateMoneyAmount(value);
-            }
+            get => _deduction80DdAmount;
+            set => _deduction80DdAmount = Validator.ValidateMoneyAmount(value);
         }
 
         #endregion
@@ -558,8 +393,8 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetAmountUnder80C()
         {
-            int total = I80C_EPFAmount + I80C_EquityLinkedAmount + I80C_HousingLoanPrincipalAmount + I80C_LifeInsuranceAmount
-                        + I80C_NationalPensionSchemeAmount + I80C_OthersAmount + I80C_ProvidentFundAmount + I80C_TuitionFeesAmount;
+            int total = EPFAmount + EquityLinkedAmount + HousingLoanPrincipalAmount + LifeInsuranceAmount
+                        + NationalPensionSchemeAmount + OthersAmount + ProvidentFundAmount + TuitionFeesAmount;
 
             return Math.Min(total, 150000);
         }
@@ -571,7 +406,7 @@ namespace IncomeTax.Core
 
         public int GetAmountFoodCoupons()
         {
-            return Math.Min(26400, _FoodCouponsAmount);
+            return Math.Min(26400, _foodCouponsAmount);
         }
 
         #endregion
@@ -584,7 +419,7 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetAmountUnderSection24B()
         {
-            return Math.Min(200000, _IDeductionSection_24BAmount);
+            return Math.Min(200000, _iDeductionSection24BAmount);
         }
 
         #endregion
@@ -597,7 +432,7 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetAmountUnder80U()
         {
-            return Math.Min(125000, _IDeduction80U_Amount);
+            return Math.Min(125000, _iDeduction80UAmount);
         }
 
         #endregion
@@ -610,7 +445,7 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetAmountUnder80EEA()
         {
-            return Math.Min(150000, IDeduction80EEA_Amount);
+            return Math.Min(150000, IDeduction80eeaAmount);
         }
         #endregion
 
@@ -621,18 +456,18 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int GetAmountUnder80DD()
         {
-            return Math.Min(125000, _Deduction80DDAmount);
+            return Math.Min(125000, _deduction80DdAmount);
         }
         #endregion
 
         #region Method 80EEB 
         /// <summary>
-        /// Maximum amount that can be exempted under 80EEB which is 1.5 Lakh Rs
+        /// Maximum amount that can be exempted under 80EEB which is 1.5 lakh Rs
         /// </summary>
         /// <returns></returns>
         public int GetAmountUnder80EEB()
         {
-            return Math.Min(150000, _Deduction80EEBAmount);
+            return Math.Min(150000, _deduction80EebAmount);
         }
         #endregion
 
@@ -641,32 +476,32 @@ namespace IncomeTax.Core
         /// <summary>
         /// Calculating House rental allowance deduction
         /// </summary>
-        /// <param name="HRAAmount">Actual Amount received from the company</param>
-        /// <param name="BasicDA">Actual Basic dearness allowance received</param>
+        /// <param name="hraAmount">Actual Amount received from the company</param>
+        /// <param name="basicDa">Actual Basic dearness allowance received</param>
         /// <param name="rentPaid">Actual Rent Paid</param>
         /// <param name="metroStatus">metro status of the user</param>
         /// <returns></returns>
-        public int HraExemptions(int HraAmount, int rentPaid, int BasicDA, bool metroStatus)
+        public int HraExemptions(int hraAmount, int rentPaid, int basicDa, bool metroStatus)
         {
             //Least of the following conditions amount will be taken into consideration
             //1. Actual HRA received
-            //2. Actual Rent Paid - 10% of BAsic DA
+            //2. Actual Rent Paid - 10% of Basic DA
             //3. 50 percent of basic for metro user / 4o percent for non metro user
 
-            double secondCond = rentPaid - (BasicDA * 0.1);
+            double secondCond = rentPaid - (basicDa * 0.1);
 
             double thirdCond;
 
             if (metroStatus)
             {
-                thirdCond = 0.5 * BasicDA;
+                thirdCond = 0.5 * basicDa;
             }
             else
             {
-                thirdCond = 0.4 * BasicDA;
+                thirdCond = 0.4 * basicDa;
             }
 
-            return ((int)Math.Min(HraAmount, Math.Min(secondCond, thirdCond)));
+            return ((int)Math.Min(hraAmount, Math.Min(secondCond, thirdCond)));
         }
 
         #endregion
@@ -675,7 +510,7 @@ namespace IncomeTax.Core
         /// Total exemption user can get
         /// </summary>
         /// <returns></returns>
-        public int TotalExmeption()
+        public int TotalExemption()
         {
             return GetStandardDeductionAmount() + GetAmountUnder80C() + GetAmountUnder80DD() +
                     GetAmountUnder80EEA() + GetAmountUnder80EEB() + GetAmountUnder80U() + GetAmountUnderSection24B() +

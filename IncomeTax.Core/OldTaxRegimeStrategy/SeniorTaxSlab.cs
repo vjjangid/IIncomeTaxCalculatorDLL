@@ -2,10 +2,9 @@
 {
     public class SeniorTaxSlab : ITaxSlabCharges
     {
-
-        private const double taxRateFivePercent = 0.05;
-        private const double taxRateTwentyPercent = 0.20;
-        private const double taxRateThirtyPercent = 0.30;
+        private const double TaxRateFivePercent = 0.05;
+        private const double TaxRateTwentyPercent = 0.20;
+        private const double TaxRateThirtyPercent = 0.30;
 
         /// <summary>
         /// Calculating tax for senior citizen category
@@ -15,42 +14,39 @@
         public double CalculateTax(double taxableAmount)
         {
             double totalTax = 0;
-            //No tax upto 300000
+            //No tax till 300000
             if (taxableAmount <= 300000)
                 return totalTax;
 
-            //No tax upto 300000
             taxableAmount -= 300000;
 
             //Five percent tax for next 200000;
             if (taxableAmount - 200000 <= 0)
             {
-                totalTax += taxableAmount * taxRateFivePercent;
+                totalTax += taxableAmount * TaxRateFivePercent;
                 return totalTax;
             }
             else
             {
-                totalTax = (200000 * taxRateFivePercent);
-                taxableAmount = taxableAmount - 200000;
+                totalTax = 200000 * TaxRateFivePercent;
+                taxableAmount -= 200000;
             }
 
-            //20 percent tax for next  5 lakhs
+            //20 percent tax for next  5 lakh
             if (taxableAmount - 500000 <= 0)
             {
-                totalTax += taxableAmount * taxRateTwentyPercent;
+                totalTax += taxableAmount * TaxRateTwentyPercent;
                 return totalTax;
             }
             else
             {
-                totalTax += 500000 * taxRateTwentyPercent;
-                taxableAmount = taxableAmount - 500000;
+                totalTax += 500000 * TaxRateTwentyPercent;
+                taxableAmount -= 500000;
             }
 
             //30 percent tax for remaining amount
-            totalTax += taxableAmount * taxRateThirtyPercent;
-
+            totalTax += taxableAmount * TaxRateThirtyPercent;
             return totalTax;
         }
-
     }
 }

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IncomeTax.Core
+﻿namespace IncomeTax.Core.GeneralInterfaces
 {
-    interface I80C_Deduction
+    internal interface I80cDeduction
     {
-
         /// <summary>
         /// Equity Linked Saving Scheme deduction
         /// </summary>
-        int I80C_EquityLinkedAmount
+        int EquityLinkedAmount
         {
             get;
             set;
@@ -21,17 +14,16 @@ namespace IncomeTax.Core
         /// <summary>
         /// Employee provident fund deduction
         /// </summary>
-        int I80C_EPFAmount
+        int EPFAmount
         {
             get;
             set;
         }
 
-
         /// <summary>
         /// Life Insurance deduction
         /// </summary>
-        int I80C_LifeInsuranceAmount
+        int LifeInsuranceAmount
         {
             get;
             set;
@@ -41,7 +33,7 @@ namespace IncomeTax.Core
         /// <summary>
         /// Provident Fund Deduction Amount
         /// </summary>
-        int I80C_ProvidentFundAmount
+        int ProvidentFundAmount
         {
             get;
             set;
@@ -50,7 +42,7 @@ namespace IncomeTax.Core
         /// <summary>
         /// Housing Loan Principal Deduction Amount
         /// </summary>
-        int I80C_HousingLoanPrincipalAmount
+        int HousingLoanPrincipalAmount
         {
             get;
             set;
@@ -60,7 +52,7 @@ namespace IncomeTax.Core
         /// <summary>
         /// National Pension Scheme Deduction Amount
         /// </summary>
-        int I80C_NationalPensionSchemeAmount
+        int NationalPensionSchemeAmount
         {
             get;
             set;
@@ -69,7 +61,7 @@ namespace IncomeTax.Core
         /// <summary>
         /// Tuition Fees deduction amount
         /// </summary>
-        int I80C_TuitionFeesAmount
+        int TuitionFeesAmount
         {
             get;
             set;
@@ -78,7 +70,7 @@ namespace IncomeTax.Core
         /// <summary>
         /// Others amount
         /// </summary>
-        int I80C_OthersAmount
+        int OthersAmount
         {
             get;
             set;

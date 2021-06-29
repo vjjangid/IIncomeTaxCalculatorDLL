@@ -10,39 +10,39 @@ namespace IncomeTax.Core.SurchargeTaxStrategy
         private const int TwoCrore = 20000000;
         private const int FiveCrore = 50000000;
 
-        private readonly int taxableIncome;
+        private readonly int _taxableIncome;
         
-        private List<int> incomeCategories = new List<int>();      
-        private Dictionary<int, ISurchargeTax> surchargeCategories = new Dictionary<int, ISurchargeTax>();
+        private List<int> _incomeCategories = new List<int>();      
+        private Dictionary<int, ISurchargeTax> _surchargeCategories = new Dictionary<int, ISurchargeTax>();
         
 
         public SurchargeTax(int taxableIncome)
         {
-            this.taxableIncome = taxableIncome;
+            this._taxableIncome = taxableIncome;
             setIncomeCategories();
         }
 
         public virtual void setIncomeCategories()
         {
-            incomeCategories.Add(FiftyLakh);
-            incomeCategories.Add(OneCrore);
-            incomeCategories.Add(TwoCrore);
-            incomeCategories.Add(FiveCrore);
-            incomeCategories.Sort();
-            incomeCategories.Reverse();
+            _incomeCategories.Add(FiftyLakh);
+            _incomeCategories.Add(OneCrore);
+            _incomeCategories.Add(TwoCrore);
+            _incomeCategories.Add(FiveCrore);
+            _incomeCategories.Sort();
+            _incomeCategories.Reverse();
 
-            surchargeCategories.Add(FiftyLakh, new SurchargeTenPercent());
-            surchargeCategories.Add(OneCrore, new SurchargeFifteenPercent());
-            surchargeCategories.Add(TwoCrore, new SurchargeTwentyFivePercent());
-            surchargeCategories.Add(FiveCrore, new SurchargeThirtySevenPercent());
-            surchargeCategories.Add(0, null);
+            _surchargeCategories.Add(FiftyLakh, new SurchargeTenPercent());
+            _surchargeCategories.Add(OneCrore, new SurchargeFifteenPercent());
+            _surchargeCategories.Add(TwoCrore, new SurchargeTwentyFivePercent());
+            _surchargeCategories.Add(FiveCrore, new SurchargeThirtySevenPercent());
+            _surchargeCategories.Add(0, null);
         }
 
         public int getCategory()
         {
-            foreach (var i in incomeCategories)
+            foreach (var i in _incomeCategories)
             {
-                if (taxableIncome >= i)
+                if (_taxableIncome >= i)
                     return i;
             }
             return 0;
@@ -50,9 +50,9 @@ namespace IncomeTax.Core.SurchargeTaxStrategy
 
         public int TotalSurchageTax()
         {
-            ISurchargeTax totalTax = surchargeCategories[getCategory()];
+            ISurchargeTax totalTax = _surchargeCategories[getCategory()];
             if(totalTax != null)
-                return totalTax.GetSurcharge(taxableIncome);
+                return totalTax.GetSurcharge(_taxableIncome);
             return 0;
         }
 

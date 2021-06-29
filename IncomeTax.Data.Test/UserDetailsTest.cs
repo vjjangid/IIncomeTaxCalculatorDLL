@@ -1,9 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using IncomeTax.Data;
-
-namespace IncomeTax.Data.Test
+﻿namespace IncomeTax.Data.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class UserDetailsTest  
     {
@@ -20,8 +18,7 @@ namespace IncomeTax.Data.Test
             var actual = user.Equals(user1);
 
             //Assert
-            Assert.AreEqual(expected, actual);
-             
+            Assert.AreEqual(expected, actual);             
         }
 
         [TestMethod]

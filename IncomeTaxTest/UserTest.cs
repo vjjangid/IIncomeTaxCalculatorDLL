@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using IncomeTax.Core;
-
-namespace IncomeTaxTest
+﻿namespace IncomeTaxTest
 {
+    using System;
+    using IncomeTax.Core;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class UserTest
     {
@@ -17,16 +17,13 @@ namespace IncomeTaxTest
             User user = new User();
             user.FirstName = "Mahesh";
             user.LastName = "Almond";
-
             string expected = "Mahesh Almond";
 
             // -- Act
-
             string actual = user.FullUserName;
 
             // -- Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         /// <summary>
@@ -35,12 +32,9 @@ namespace IncomeTaxTest
         [TestMethod]
         public void UserNameFirstNameEmpty()
         {
-
             // --Arrange
-
             User user = new User();
             user.LastName = "Jangid";
-
             string expected = "Jangid";
 
             //--Act
@@ -56,12 +50,9 @@ namespace IncomeTaxTest
         [TestMethod]
         public void UserNameLastNameEmpty()
         {
-
             // --Arrange
-
             User user = new User();
             user.FirstName = "Mahesh";
-
             string expected = "Mahesh";
 
             //--Act
@@ -75,18 +66,14 @@ namespace IncomeTaxTest
         public void UserNameFullNameEmpty()
         {
             // -- Arrange
-            User user = new User();
-            
-
+            User user = new User();         
             string expected = "";
 
             // -- Act
-
             string actual = user.FullUserName;
 
             // -- Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         /// <summary>
@@ -98,7 +85,6 @@ namespace IncomeTaxTest
             // --Arrange
             User user = new User();
             user.DOB = new DateTime(1997, 08, 26);
-
             AgeCategory expected = AgeCategory.General;
 
             // --Act
@@ -106,7 +92,6 @@ namespace IncomeTaxTest
 
             // --Arrange
             Assert.AreEqual(expected, actual);
-
         }
     }
 }

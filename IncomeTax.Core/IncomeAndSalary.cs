@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IncomeTax.Core.GeneralInterfaces;
 
 
-                                                 /// <summary>
+/// <summary>
                                                  /// Leaving one doubt here what if user
                                                  /// enters the string amount? Does application
                                                  /// will crash? Will check it later
@@ -20,19 +21,19 @@ namespace IncomeTax.Core
 
         #region Properties
 
-        private int _BasicDAAmount;
-        private int _HRA_Amount;
-        private int _BonusCommissionAmount;
-        private int _OtherAllowancesAmount;
-        private int _BusinessAmount;
-        private int _ProfessionAmount;
-        private int _ShortTermCGNormalRatesAmount;
-        private int _ShortTermCG15Amount;
-        private int _LongTermCG10;
-        private int _LongTermCG20;
-        private int _InterestSavingsBankAccounts;
-        private int _InterestFixedDeposits;
-        private int _OtherSources;
+        private int _basicDaAmount;
+        private int _hraAmount;
+        private int _bonusCommissionAmount;
+        private int _otherAllowancesAmount;
+        private int _businessAmount;
+        private int _professionAmount;
+        private int _shortTermCgNormalRatesAmount;
+        private int _shortTermCg15Amount;
+        private int _longTermCg10;
+        private int _longTermCg20;
+        private int _interestSavingsBankAccounts;
+        private int _interestFixedDeposits;
+        private int _otherSources;
 
         #endregion
 
@@ -45,11 +46,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _BasicDAAmount;
+                return _basicDaAmount;
             }
             set
             {
-                _BasicDAAmount = Validator.ValidateMoneyAmount(value);
+                _basicDaAmount = Validator.ValidateMoneyAmount(value);
                 
             }
         }
@@ -62,11 +63,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _HRA_Amount;
+                return _hraAmount;
             }
             set
             {
-                _HRA_Amount = Validator.ValidateMoneyAmount(value);
+                _hraAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -77,11 +78,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _BonusCommissionAmount;
+                return _bonusCommissionAmount;
             }
             set
             {
-                _BonusCommissionAmount = Validator.ValidateMoneyAmount(value);
+                _bonusCommissionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -92,11 +93,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _OtherAllowancesAmount;
+                return _otherAllowancesAmount;
             }
             set
             {
-                _OtherAllowancesAmount = Validator.ValidateMoneyAmount(value);
+                _otherAllowancesAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -111,11 +112,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _BusinessAmount;
+                return _businessAmount;
             }
             set
             {
-                _BusinessAmount = Validator.ValidateMoneyAmount(value);
+                _businessAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -126,11 +127,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _ProfessionAmount;
+                return _professionAmount;
             }
             set
             {
-                _ProfessionAmount = Validator.ValidateMoneyAmount(value);
+                _professionAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -145,11 +146,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _ShortTermCGNormalRatesAmount;
+                return _shortTermCgNormalRatesAmount;
             }
             set
             {
-                _ShortTermCGNormalRatesAmount = Validator.ValidateMoneyAmount(value);
+                _shortTermCgNormalRatesAmount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -160,11 +161,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _ShortTermCG15Amount;
+                return _shortTermCg15Amount;
             }
             set
             {
-                _ShortTermCG15Amount = Validator.ValidateMoneyAmount(value);
+                _shortTermCg15Amount = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -175,11 +176,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _LongTermCG10;
+                return _longTermCg10;
             }
             set
             {
-                _LongTermCG10 = Validator.ValidateMoneyAmount(value);
+                _longTermCg10 = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -190,11 +191,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _LongTermCG20;
+                return _longTermCg20;
             }
             set
             {
-                _LongTermCG20 = Validator.ValidateMoneyAmount(value);
+                _longTermCg20 = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -210,11 +211,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _InterestSavingsBankAccounts;
+                return _interestSavingsBankAccounts;
             }
             set
             {
-                _InterestSavingsBankAccounts = Validator.ValidateMoneyAmount(value);
+                _interestSavingsBankAccounts = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -225,11 +226,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _InterestFixedDeposits;
+                return _interestFixedDeposits;
             }
             set
             {
-                _InterestFixedDeposits = Validator.ValidateMoneyAmount(value);
+                _interestFixedDeposits = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -240,11 +241,11 @@ namespace IncomeTax.Core
         {
             get
             {
-                return _OtherSources;
+                return _otherSources;
             }
             set
             {
-                _OtherSources = Validator.ValidateMoneyAmount(value);
+                _otherSources = Validator.ValidateMoneyAmount(value);
             }
         }
 
@@ -257,10 +258,10 @@ namespace IncomeTax.Core
         /// <returns></returns>
         public int TotalSalaryAndIncome()
         {
-            return ( _BasicDAAmount +  _HRA_Amount + _BonusCommissionAmount + _OtherAllowancesAmount +
-                     _BusinessAmount + _ProfessionAmount + _ShortTermCGNormalRatesAmount +_ShortTermCG15Amount +
-                    _LongTermCG10 + _LongTermCG20 + _InterestSavingsBankAccounts + _InterestFixedDeposits + 
-                    _OtherSources ) ;
+            return ( _basicDaAmount +  _hraAmount + _bonusCommissionAmount + _otherAllowancesAmount +
+                     _businessAmount + _professionAmount + _shortTermCgNormalRatesAmount +_shortTermCg15Amount +
+                    _longTermCg10 + _longTermCg20 + _interestSavingsBankAccounts + _interestFixedDeposits + 
+                    _otherSources ) ;
         }
 
     }

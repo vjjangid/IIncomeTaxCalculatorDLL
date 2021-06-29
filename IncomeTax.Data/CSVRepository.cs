@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 
 namespace IncomeTax.Data
 {
-    public class CSVRepository : IUserRepository
+    public class CsvRepository : IUserRepository
     {
         private string _filePath;
-        private CsvFileReader reader;
-        private CsvFileWriter writer;
+        private CsvFileReader _reader;
+        private CsvFileWriter _writer;
 
         //Load data at the start of application in a dictionary for efficiency
-        private HashSet<string> ValidUser; 
+        private HashSet<string> _validUser; 
 
-        public CSVRepository(string filePath, UserDetails user)
+        public CsvRepository(string filePath, UserDetails user)
         {
             _filePath = filePath;
             
@@ -31,8 +27,8 @@ namespace IncomeTax.Data
         {
             //Check whether user already exist or not
             //Using dictionary here is good keeping Mobile Number as key
-            writer = new CsvFileWriter(_filePath);
-            writer.WriteRecord(user);
+            _writer = new CsvFileWriter(_filePath);
+            _writer.WriteRecord(user);
             
         }
 
@@ -42,8 +38,8 @@ namespace IncomeTax.Data
         /// <param name="user">User Details</param>
         public void Delete(UserDetails user)
         {
-            writer = new CsvFileWriter(_filePath);
-            writer.DeleteRecord(user.MobileNumber);
+            _writer = new CsvFileWriter(_filePath);
+            _writer.DeleteRecord(user.MobileNumber);
         }
 
         /// <summary>
@@ -53,10 +49,10 @@ namespace IncomeTax.Data
         /// <returns>boolean value true if user exist in database</returns>
         public bool Read(UserDetails user)
         {
-            reader = new CsvFileReader(_filePath);
-            ValidUser = reader.ValidUserHashSet();
+            _reader = new CsvFileReader(_filePath);
+            _validUser = _reader.ValidUserHashSet();
 
-            return ValidUser.Contains(user.MobileNumber);
+            return _validUser.Contains(user.MobileNumber);
         }
 
         /// <summary>
@@ -65,14 +61,14 @@ namespace IncomeTax.Data
         /// <param name="user">User details</param>
         public void Update(UserDetails user)
         {
-            writer = new CsvFileWriter(_filePath);
-            writer.UpdateRecord(user.MobileNumber, user);
+            _writer = new CsvFileWriter(_filePath);
+            _writer.UpdateRecord(user.MobileNumber, user);
         }
 
         public bool ValidateUser(UserDetails user)
         {
-            reader = new CsvFileReader(_filePath);
-            Dictionary<string, List<string>> allData = reader.RetrieveAllData();
+            _reader = new CsvFileReader(_filePath);
+            Dictionary<string, List<string>> allData = _reader.RetrieveAllData();
 
             try
             {

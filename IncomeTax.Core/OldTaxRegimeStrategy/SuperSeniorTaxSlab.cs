@@ -2,9 +2,8 @@
 {
     public class SuperSeniorTaxSlab : ITaxSlabCharges
     {
-
-        private const double taxRateTwentyPercent = 0.20;
-        private const double taxRateThirtyPercent = 0.30;
+        private const double TaxRateTwentyPercent = 0.20;
+        private const double TaxRateThirtyPercent = 0.30;
 
         /// <summary>
         /// Calculate tax for super senior citizen
@@ -15,28 +14,26 @@
         {
             double totalTax = 0;
 
-            //No tax upto 500000
+            //No tax till 500000
             if (taxableAmount <= 500000)
                 return totalTax;
             taxableAmount -= 500000;
 
-            //20 percent tax for next  5 lakhs
+            //20 percent tax for next  5 lakh
             if (taxableAmount - 500000 <= 0)
             {
-                totalTax += taxableAmount * taxRateTwentyPercent;
+                totalTax += taxableAmount * TaxRateTwentyPercent;
                 return totalTax;
             }
             else
             {
-                totalTax += 500000 * taxRateTwentyPercent;
+                totalTax += 500000 * TaxRateTwentyPercent;
                 taxableAmount = taxableAmount - 500000;
             }
 
             //30 percent tax for remaining amount
-            totalTax += taxableAmount * taxRateThirtyPercent;
-            return totalTax;
-        
+            totalTax += taxableAmount * TaxRateThirtyPercent;
+            return totalTax;        
         }      
-
     }
 }

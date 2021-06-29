@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IncomeTax.Data
 {
@@ -11,7 +8,7 @@ namespace IncomeTax.Data
     {
 
         private readonly string _fileName;
-        private HashSet<string> userlist;
+        private HashSet<string> _userlist;
 
         public CsvFileReader(string fileName)
         {
@@ -30,13 +27,13 @@ namespace IncomeTax.Data
                 {
                     using (StreamReader reader = new StreamReader(File.OpenRead(_fileName)))
                     {
-                        userlist = new HashSet<string>();
+                        _userlist = new HashSet<string>();
 
                         string line = "";
                         while ((line = reader.ReadLine()) != null)
                         {
                             string[] linearray = line.Split(';');
-                            userlist.Add(linearray[0]);
+                            _userlist.Add(linearray[0]);
                         }
                     }
 
@@ -52,7 +49,7 @@ namespace IncomeTax.Data
                 throw exc;
             }
 
-            return userlist;
+            return _userlist;
         }
 
         /// <summary>
@@ -61,7 +58,7 @@ namespace IncomeTax.Data
         /// <returns>Enumerator of string</returns>
         public IEnumerable<string> ValiduserListEnumerator()
         { 
-            return userlist;
+            return _userlist;
         }
 
         public Dictionary<string, List<string>> RetrieveAllData()
@@ -87,8 +84,8 @@ namespace IncomeTax.Data
                                 temp.Add(linearray[i]);
                             }
 
-                            string MobileNumber = linearray[0];
-                            allRecords.Add(MobileNumber, temp);
+                            string mobileNumber = linearray[0];
+                            allRecords.Add(mobileNumber, temp);
                         }
                     }
 

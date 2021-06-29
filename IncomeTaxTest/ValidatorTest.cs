@@ -1,18 +1,15 @@
-﻿using IncomeTax.Core;
-using IncomeTax.Core.CustomException;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-
-namespace IncomeTaxTest
+﻿namespace IncomeTaxTest
 {
+    using IncomeTax.Core;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class ValidatorTest
     {
         [TestMethod]
         public void ValidateMoneyAmount_NegativeAmountGiven_ShouldReturnZero()
         {
-            //--Arrange
-            
+            //--Arrange         
             int expected = 0;
 
             //--Act
@@ -20,7 +17,6 @@ namespace IncomeTaxTest
 
             //--Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -59,6 +55,5 @@ namespace IncomeTaxTest
             bool original = Validator.ValidateDOB(13);
             Assert.AreEqual(expected, original);
         }
-
     }
 }
